@@ -1,0 +1,12 @@
+.popup_btns {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+}
+
+@media (min-width: 960px) {
+    .mp-catalog-item__demo-btn, .mp-catalog-item__more-btn {
+        width: 15vw;
+    }
+}

@@ -1,0 +1,33 @@
+<div class="popup" *ngIf="popupService.popupStatus">
+  <div class="mp-catalog-item__btns popup_btns">
+    <a data-analytics-target="target_solution_demo_solution" target="_blank"
+      class="cd-btn mp-catalog-item__demo-btn js-analytics">
+      <font style="vertical-align: inherit">
+        <font style="vertical-align: inherit" >
+          Оренда
+        </font>
+      </font>
+    </a>
+    <a href="https://tg.pulse.is/CalmHaven_bot?start=66e2aa4a16c4d6f9e10c2bbe|id_site=1|rental=false" data-analytics-target="target_solution_more_solution"
+      class="cd-btn mp-catalog-item__more-btn js-analytics">
+      <font style="vertical-align: inherit">
+        <font style="vertical-align: inherit">
+          Бронювання
+        </font>
+      </font>
+    </a>
+  </div>
+  <div class="close-popup close"><img 
+    src="../assets/img/cross_w.png"
+    alt=""
+    (click)="popupService.editPopup()"></div>
+  <!-- <div class="arrowhead-popup">
+    <img class="left" src="../assets/img/arrowhead_l.png" alt="">
+  </div>
+  <div class="arrowhead-popup">
+    <img class="right" src="../assets/img/arrowhead_r.png" alt="">
+  </div> -->
+  <div class="mp-catalog-item-popup close" (click)="closePopup($event)">
+    <img src={{popupService.getSrc()}} class="img-popup">
+  </div>
+</div>

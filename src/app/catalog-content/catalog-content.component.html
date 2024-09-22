@@ -1,0 +1,127 @@
+<div class="mp-catalog__content">
+
+    <!-- ------------------------ Заголовок ------------------------- -->
+
+    <h1 class="mp-catalog__title" data="catalog">
+      <font style="vertical-align: inherit">
+        <font style="vertical-align: inherit">
+          Оренда готових сайтів
+        </font>
+      </font>
+    </h1>
+    <!-- ------------------------ Заголовок ------------------------- -->
+
+    <!-- ------------------------ Catalog ------------------------- -->
+
+    <div class="mp-catalog-content lightgallery">
+      <div class="mp-catalog-content__inner mp-catalog-item--redesign">
+
+        <!-- ------------------------ Card ------------------------- -->
+
+        <div class="mp-catalog-item-wrap" *ngFor="let card of catalogService.catalogBeautyCalon">
+          <div class="mp-catalog-item js-catalog-item expanded" data-src="" data-id="" data-type="solution"
+            data-name="" data-popup_form="solution-order-lightgallery-panel" data-popup_object_type_id=""
+            data-popup_object_id="">
+
+            <img (click)="popupService.editPopup(card.imgBig)" src={{popupService.getSrc(card.img)}} alt=""/>
+            <!-- </a> -->
+
+
+
+            <div class="mp-catalog-item__controls">
+              <!-- flag block !-->
+              <div class="mp-catalog-item__label-wrap">
+                <div class="mp-catalog-item__label mp-catalog-item__label--new">
+                  <font style="vertical-align: inherit">
+                    <font style="vertical-align: inherit">
+                      Новинка
+                    </font>
+                  </font>
+                </div>
+              </div>
+              <!-- flag block !-->
+
+              <div class="mp-catalog-item__controls-top">
+                <div class="mp-catalog-item__controls-inner">
+                  <p class="mp-catalog-item__id">
+                    <font style="vertical-align: inherit">
+                      <font style="vertical-align: inherit">{{card.category}}</font>
+                    </font>
+                  </p>
+
+                  <a href="#" class="mp-catalog-item__title js-analytics"
+                    data-analytics-target="target_solution_name_solution">
+                    <font style="vertical-align: inherit">
+                      <font style="vertical-align: inherit">
+                        {{card.name}}
+                      </font>
+                    </font>
+                  </a>
+                </div>
+
+
+
+
+              </div>
+
+              <div class="mp-catalog-item__controls-bottom cashback-enabled">
+                <div class="mp-catalog-item__price">
+                  <span class="mp-catalog-item__price-current">
+                    <font style="vertical-align: inherit">
+                      <font style="vertical-align: inherit">
+                        {{card.promotionalPrice}} грн
+                      </font>
+                    </font>
+                  </span>
+                  <span class="mp-catalog-item__price-old">
+                    <font style="vertical-align: inherit">
+                      <font style="vertical-align: inherit">{{card.price}} грн</font>
+                    </font>
+                  </span>
+
+
+
+                </div>
+
+                <div class="mp-catalog-item__btns">
+                  <a data-analytics-target="target_solution_demo_solution" target="_blank"
+                    class="cd-btn mp-catalog-item__demo-btn js-analytics">
+                    <font style="vertical-align: inherit">
+                      <font style="vertical-align: inherit" >
+                        Оренда
+                      </font>
+                    </font>
+                  </a>
+                  <a href="https://tg.pulse.is/CalmHaven_bot?start=66e2aa4a16c4d6f9e10c2bbe|id_site=1|rental=false" data-analytics-target="target_solution_more_solution"
+                    class="cd-btn mp-catalog-item__more-btn js-analytics">
+                    <font style="vertical-align: inherit">
+                      <font style="vertical-align: inherit">
+                        Бронювання
+                      </font>
+                    </font>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ------------------------ Card ------------------------- -->
+
+      </div>
+    </div>
+
+    <!-- ------------------------ Catalog ------------------------- -->
+
+    <div class="mp-catalog__text-bot">
+      <p class="mp-catalog__text-paragraph pictured">
+        <span class="mp-catalog__text-previewText">
+          Оренда готових сайтів для салонів краси — це зручне рішення для тих, хто прагне швидко запустити свій
+          бізнес онлайн без зайвих витрат часу та ресурсів. Готовий сайт дозволяє салонам краси зосередитися на
+          обслуговуванні клієнтів, уникаючи тривалих етапів розробки веб-ресурсу. Такі сайти зазвичай вже мають
+          адаптивний дизайн, зручну структуру та всі необхідні функції: онлайн-запис, фотогалереї, відгуки,
+          інформацію про послуги та ціни. Оренда також включає технічну підтримку і регулярні оновлення, що
+          дозволяє салону завжди бути на висоті сучасних технологій.
+        </span>
+      </p>
+    </div>
+  </div>
