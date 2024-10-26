@@ -5257,12 +5257,11 @@ body:not(.ie-fix) .mp-catalog-item-wrap {
 }
 
 .cd-request-popup {
-    position: absolute;
+    position: fixed;
     top: 15%;
     width: 80%;
     max-width: 400px;
     z-index: 1063;
-    display: none;
     box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 50%);
     border-radius: 10px;
     background-color: #fff;
@@ -8351,7 +8350,7 @@ a.lg-download {
 }
 
 .mp-catalog {
-    background-color: #fff;
+    background-color: #e4ffe5;
     position: relative;
     z-index: 5;
 }

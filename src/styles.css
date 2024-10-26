@@ -1,5 +1,81 @@
+@media (max-width: 900px) {
+  .tell-btn {
+    display: block !important;
+  }
+}
+
+.tell-btn {
+  display: none;
+  color: #0088cc;
+    cursor: pointer;
+    text-decoration: none;
+  text-align: center;
+}
+
+body {
+  overflow: hidden;
+}
+
+.big-card {
+  position: absolute;
+  height: 29px;
+  top: 6px;
+  right: 0px;
+}
+
+.text-big-card {
+  background-color: #01acdb !important;
+  cursor: pointer;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+}
+
+.scroll-off {
+  overflow: hidden;
+}
+
+
+img.card {
+  max-width: 90vw;
+}
+
+.viber-btn {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 1C7.28 1 1 7.28 1 15c0 2.716.778 5.335 2.257 7.608l-2.181 5.09A.933.933 0 0 0 2.3 28.925l5.09-2.182A13.887 13.887 0 0 0 15 29c7.72 0 14-6.28 14-14S22.72 1 15 1Zm7.187 19.012s-1.165 1.492-2.007 1.841c-2.137.885-5.157 0-8.596-3.438-3.437-3.438-4.323-6.458-3.437-8.596.349-.842 1.842-2.005 1.842-2.005a1.087 1.087 0 0 1 1.396.087l1.69 1.69a.936.936 0 0 1 0 1.318l-1.062 1.06s-.429 1.288 2.15 3.867c2.578 2.58 3.867 2.15 3.867 2.15l1.06-1.06a.936.936 0 0 1 1.32 0l1.689 1.689c.362.363.401.991.086 1.396l.002.001Z' fill='%23fff'/%3E%3C/svg%3E");
+}
+.tg-btn {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1.617 14.335 6.44 2.15 15.291-9.192c.222-.133.45.163.258.336L12.03 18.107l-.43 5.866a.48.48 0 0 0 .285.475.501.501 0 0 0 .553-.093l3.564-3.447 6.516 4.85c.702.523 1.72.155 1.908-.691l4.537-20.258c.26-1.156-.893-2.131-2.016-1.708L1.585 12.65a.89.89 0 0 0 .032 1.684Z' fill='%23fff'/%3E%3C/svg%3E")
+}
+.whatsapp-btn {
+  background-image: url("assets/img/whatsapp-white-icon(2).png");
+  width: 30px;
+  height: 30px;
+}
+
+
+.mp-button {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.cd-btn.js-request.form_submit_btn {
+  margin: 10px 0px;
+}
+
 .catalog-menu {
   position: fixed;
+}
+
+.img-close {
+  position: absolute;
+  width: 5vh;
+  right: 4.5vw;
+  top: 2vh;
+  cursor: pointer;
 }
 
 .popup {
@@ -11,16 +87,6 @@
       top: 0;
       background: #000000ad;
     height: 100%;
-    .close-popup {
-      img {
-        position: absolute;
-        max-width: 5vh;
-        right: 5vw;
-        top: 2vh;
-        cursor: pointer;
-      }
-      
-    }
     .arrowhead-popup {
       img {
         position: absolute;
@@ -45,8 +111,7 @@
     display: block;
   }
   .img-popup {
-    width: 80%;
-    margin: 30px 0px;
+    width: 100%;
   }
   
   @font-face {

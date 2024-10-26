@@ -1,4 +1,5 @@
-import { Component, ContentChildren } from '@angular/core';
+import { Component, ElementRef} from '@angular/core';
+import { CatalogService } from '../shared/catalog.service';
 import { PopupService } from '../shared/popup.service';
 
 @Component({
@@ -7,12 +8,16 @@ import { PopupService } from '../shared/popup.service';
   styleUrls: ['./popup-card.component.css']
 })
 export class PopupCardComponent {
-  constructor(public popupService: PopupService) {}
+  public fullImgStatus: boolean = false;
+
+  constructor(public catalogService: CatalogService, public popupService: PopupService) {
+    
+  }
 
   closePopup(event: Event) {
     const $event = event.target as HTMLTemplateElement
     if ($event.classList.contains('close')) {
-      this.popupService.editPopup()
+      this.popupService.closePopup('card')
     }
   }
 }

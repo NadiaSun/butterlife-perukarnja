@@ -7,6 +7,7 @@ import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { CatalogContentComponent } from './catalog-content/catalog-content.component';
 import { PopupCardComponent } from './popup-card/popup-card.component';
+import { PopupMessengerComponent } from './popup-messenger/popup-messenger.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PopupCardComponent } from './popup-card/popup-card.component';
     HeaderMenuComponent,
     CatalogComponent,
     CatalogContentComponent,
-    PopupCardComponent
+    PopupCardComponent,
+    PopupMessengerComponent
   ],
   imports: [
     BrowserModule,

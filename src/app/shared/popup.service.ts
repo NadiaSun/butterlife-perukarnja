@@ -1,29 +1,31 @@
 import { Injectable } from '@angular/core';
+import { Card } from './interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PopupService {
-  popupStatus: boolean = false;
-  popupImg: string = ''
+  public card!: Card;
+  popupCard: boolean = false;
+  popupMessenger: boolean = false;
 
   constructor() { }
 
-  editPopup(img?: string) {
-    if (img) {
-      this.popupStatus = true;
-      this.popupImg = img;
-    } else {
-      this.popupStatus = false;
-      this.popupImg = '';
-    }
-    
+  openCard(card: Card) {
+    this.popupCard = true;
+    this.card = card;
   }
 
-  getSrc(img?: string): string {
-    if (img) {
-      return "../assets/img/" + img + '.jpg'
+  openMessenger(card: Card) {
+    this.popupMessenger = true;
+    this.card = card;
+  }
+
+  closePopup(value: 'messenger' | 'card') {
+    if(value === 'messenger') {
+      this.popupMessenger = false;
+    } else if(value === 'card') {
+      this.popupCard = false;
     }
-    return "../assets/img/" + this.popupImg + '.jpg'
   }
 }
