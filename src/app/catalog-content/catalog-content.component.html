@@ -22,8 +22,10 @@
           <div class="mp-catalog-item js-catalog-item expanded" data-src="" data-id="" data-type="solution"
             data-name="" data-popup_form="solution-order-lightgallery-panel" data-popup_object_type_id=""
             data-popup_object_id="">
-
-            <img (click)="popupService.editPopup(card.imgBig)" src={{popupService.getSrc(card.img)}} alt=""/>
+            <div class="big-card" (click)="popupService.openCard(card)">
+              <div class="mp-catalog-item__label mp-catalog-item__label--new text-big-card">Демо версія сайту</div>
+            </div>
+            <img class="card" (click)="popupService.openCard(card)" src={{catalogService.getSrc(card.img)}} alt=""/>
             <!-- </a> -->
 
 
@@ -45,7 +47,7 @@
                 <div class="mp-catalog-item__controls-inner">
                   <p class="mp-catalog-item__id">
                     <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">{{card.category}}</font>
+                      <font style="vertical-align: inherit">{{card.category}}(#{{card.id}})</font>
                     </font>
                   </p>
 
@@ -85,15 +87,17 @@
 
                 <div class="mp-catalog-item__btns">
                   <a data-analytics-target="target_solution_demo_solution" target="_blank"
-                    class="cd-btn mp-catalog-item__demo-btn js-analytics">
+                    class="cd-btn mp-catalog-item__demo-btn js-analytics"
+                    (click)="popupService.openMessenger(card)">
                     <font style="vertical-align: inherit">
                       <font style="vertical-align: inherit" >
                         Оренда
                       </font>
                     </font>
                   </a>
-                  <a href="https://tg.pulse.is/CalmHaven_bot?start=66e2aa4a16c4d6f9e10c2bbe|id_site=1|rental=false" data-analytics-target="target_solution_more_solution"
-                    class="cd-btn mp-catalog-item__more-btn js-analytics">
+                  <a data-analytics-target="target_solution_more_solution"
+                    class="cd-btn mp-catalog-item__more-btn js-analytics"
+                    (click)="popupService.openMessenger(card)">
                     <font style="vertical-align: inherit">
                       <font style="vertical-align: inherit">
                         Бронювання

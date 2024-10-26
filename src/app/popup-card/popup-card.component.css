@@ -3,10 +3,33 @@
     position: absolute;
     text-align: center;
     display: inline-block;
+    z-index: 10;
 }
 
 @media (min-width: 960px) {
     .mp-catalog-item__demo-btn, .mp-catalog-item__more-btn {
         width: 15vw;
     }
+}
+
+
+@media (max-width: 960px) {
+  .bigImg {
+    width: 150%!important;
+    margin-top: 0px!important;
+  }
+}
+
+.id-site {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 10px;
+    color: #01acdbc9;;
+    font-weight: bold;
+}
+
+.img-popup {
+    width: 80%;
+    margin-top: 30px;
 }

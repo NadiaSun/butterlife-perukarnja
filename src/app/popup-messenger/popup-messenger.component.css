@@ -1,0 +1,20 @@
+.btn-href{
+    height: 100%;
+    display: block;
+}
+a {
+    text-decoration: none;
+}
+
+.close-btn {
+    background: #c58ccf!important;
+}
+
+.close-btn:hover {
+    background: #d7a6e0!important;
+}
+
+.img-close {
+    right: unset;
+    top: unset;
+}
