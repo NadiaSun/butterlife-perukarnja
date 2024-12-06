@@ -1,6 +1,7 @@
-import { Component, ElementRef} from '@angular/core';
+import { Component, ElementRef, HostListener} from '@angular/core';
 import { CatalogService } from '../shared/catalog.service';
 import { PopupService } from '../shared/popup.service';
+
 
 @Component({
   selector: 'app-popup-card',
@@ -9,6 +10,17 @@ import { PopupService } from '../shared/popup.service';
 })
 export class PopupCardComponent {
   public fullImgStatus: boolean = false;
+  windowT: number = window.screenTop
+  public get scroll(): boolean {
+    console.log(this.windowT)
+    console.log(window.screenTop)
+    if (this.windowT !== window.screenTop) {
+      this.windowT = window.screenTop
+      return true
+    } else {
+      return false
+    }
+  }
 
   constructor(public catalogService: CatalogService, public popupService: PopupService) {
     

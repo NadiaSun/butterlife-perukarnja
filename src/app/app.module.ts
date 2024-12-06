@@ -15,12 +15,12 @@ import { PopupMessengerComponent } from './popup-messenger/popup-messenger.compo
     HeaderMenuComponent,
     CatalogComponent,
     CatalogContentComponent,
-    PopupCardComponent,
-    PopupMessengerComponent
+    PopupMessengerComponent,
+    PopupCardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
