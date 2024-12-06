@@ -1,5 +1,5 @@
-<div class="popup" *ngIf="popupService.popupCard">
-  <div class="mp-catalog-item__btns popup_btns close" (click)="closePopup($event)">
+<div class="popup" *ngIf="popupService.popupCard" >
+  <div *ngIf="!fullImgStatus" class="mp-catalog-item__btns popup_btns close" (click)="closePopup($event)">
     <a data-analytics-target="target_solution_demo_solution" target="_blank"
       class="cd-btn mp-catalog-item__demo-btn js-analytics"
       (click)="popupService.openMessenger(popupService.card)"
@@ -28,7 +28,8 @@
   <div class="close-popup close"><img 
     src="../assets/img/cross_w.png"
     alt=""
-    (click)="popupService.closePopup('card')" class="img-close close"></div>
+    (click)="popupService.closePopup('card')" class="img-close close">
+  </div>
   <!-- <div class="arrowhead-popup">
     <img class="left" src="../assets/img/arrowhead_l.png" alt="">
   </div>
@@ -37,10 +38,11 @@
   </div> -->
   <div class="mp-catalog-item-popup close" (click)="closePopup($event)">
     <img
-      src={{catalogService.getSrc(popupService.card.imgBig)}}
+      [src]="catalogService.getSrc(popupService.card.imgBig, fullImgStatus ? 'big' : 'little')"
       class="img-popup"
       (click)="fullImgStatus = !fullImgStatus"
       [ngClass]="{'bigImg': fullImgStatus}"
+      loading="lazy"
     >
   </div>
 </div>

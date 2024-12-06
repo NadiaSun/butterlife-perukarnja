@@ -33,3 +33,17 @@
     width: 80%;
     margin-top: 30px;
 }
+.bigImg {
+    width: 120%;
+    margin-top: 0px;
+}
+
+.hovertext {
+    z-index: 1000;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 8vh;
+    color: #01acdbc9;
+    font-family: cursive;
+}

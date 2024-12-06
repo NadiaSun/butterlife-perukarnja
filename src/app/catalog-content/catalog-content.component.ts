@@ -9,6 +9,7 @@ import { PopupService } from '../shared/popup.service';
   styleUrls: ['./catalog-content.component.css']
 })
 export class CatalogContentComponent {
+  test: any = window.innerWidth
 
   constructor(
     public catalogService: CatalogService,

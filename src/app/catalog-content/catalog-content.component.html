@@ -5,7 +5,8 @@
     <h1 class="mp-catalog__title" data="catalog">
       <font style="vertical-align: inherit">
         <font style="vertical-align: inherit">
-          Оренда готових сайтів
+          Ширина экрана: {{test}}
+          <!-- Оренда готових сайтів -->
         </font>
       </font>
     </h1>
@@ -25,7 +26,7 @@
             <div class="big-card" (click)="popupService.openCard(card)">
               <div class="mp-catalog-item__label mp-catalog-item__label--new text-big-card">Демо версія сайту</div>
             </div>
-            <img class="card" (click)="popupService.openCard(card)" src={{catalogService.getSrc(card.img)}} alt=""/>
+            <img class="card" (click)="popupService.openCard(card)" [src]="catalogService.getSrc(card.img, 'small')" alt=""/>
             <!-- </a> -->
 
 
