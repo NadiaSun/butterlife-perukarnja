@@ -9,8 +9,13 @@ import { PopupService } from '../shared/popup.service';
   styleUrls: ['./popup-card.component.css']
 })
 export class PopupCardComponent {
+
+  constructor(public catalogService: CatalogService, public popupService: PopupService) {
+    
+  }
   public fullImgStatus: boolean = false;
-  windowT: number = window.screenTop
+  windowT: number = window.screenTop;
+  
   public get scroll(): boolean {
     console.log(this.windowT)
     console.log(window.screenTop)
@@ -20,10 +25,6 @@ export class PopupCardComponent {
     } else {
       return false
     }
-  }
-
-  constructor(public catalogService: CatalogService, public popupService: PopupService) {
-    
   }
 
   closePopup(event: Event) {
