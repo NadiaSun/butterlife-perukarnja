@@ -8748,11 +8748,11 @@ a.lg-download {
     z-index: 3;
 }
 
-@media all and (min-width: 960px) {
+/* @media all and (min-width: 960px) {
     .mp-catalog__menu {
         display: block;
     }
-}
+} */
 
 @media all and (min-width: 1200px) {
     .mp-catalog__menu {

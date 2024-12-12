@@ -40,8 +40,100 @@ body {
 
 
 img.card {
-  max-width: 90vw;
+  max-width: 100%;
+  display: block;
 }
+/* repeat(auto-fit, minmax(260px, 1fr)) */
+
+@media all and (min-width: 1024px) {
+  .mp-catalog__menu {
+      display: block;
+  }
+}
+
+@media (max-width: 479px) {
+  .mp-catalog-item--redesign {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
+
+
+.mp-catalog-item:not(.mp-catalog-item--logotype) {
+        width: 100%!important;
+        height: 100%!important;
+}
+
+
+@media (min-width: 480px) and (max-width: 1023px) {
+
+  @media (min-width: 480px) and (max-width: 699px) {
+      .mp-catalog-item--redesign {
+        grid-template-columns: repeat(1, 1fr);
+      }
+  } 
+  @media (min-width: 700px) and (max-width: 1023px) {
+      .mp-catalog-item--redesign {
+        grid-template-columns: repeat(2, minmax(320px, 1fr));
+      } 
+      .mp-catalog-item-wrap {
+        margin: 0 10px!important;
+      }
+
+
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1267px) {
+
+  .mp-catalog-item--redesign {
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+  }
+  .mp-catalog-item-wrap {
+    margin: 0 10px!important;
+  }
+}
+
+@media (min-width: 1268px) and (max-width: 1439px) {
+
+  .mp-catalog-item--redesign {
+    grid-template-columns: repeat(3, minmax(290px, 1fr));
+  }
+
+  .mp-catalog-item-wrap {
+    margin: 0 5px!important;
+  }
+}
+
+@media (min-width: 1440px) {
+
+  @media (min-width: 1440px) and (max-width: 1600px) {
+
+    .mp-catalog-item--redesign {
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+      
+      grid-column-gap: 1%!important;
+    }
+
+  }
+
+  @media (min-width: 1601px) {
+
+    .mp-catalog-item--redesign {
+      grid-template-columns: repeat(4, minmax(300px, 1fr));
+      grid-column-gap: 1%!important;
+    }
+
+  }
+}
+
+
+
+
+  .mp-catalog-item:not(.mp-catalog-item--logotype) {
+
+      max-width: 383px;
+  }
 
 .viber-btn {
   background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 1C7.28 1 1 7.28 1 15c0 2.716.778 5.335 2.257 7.608l-2.181 5.09A.933.933 0 0 0 2.3 28.925l5.09-2.182A13.887 13.887 0 0 0 15 29c7.72 0 14-6.28 14-14S22.72 1 15 1Zm7.187 19.012s-1.165 1.492-2.007 1.841c-2.137.885-5.157 0-8.596-3.438-3.437-3.438-4.323-6.458-3.437-8.596.349-.842 1.842-2.005 1.842-2.005a1.087 1.087 0 0 1 1.396.087l1.69 1.69a.936.936 0 0 1 0 1.318l-1.062 1.06s-.429 1.288 2.15 3.867c2.578 2.58 3.867 2.15 3.867 2.15l1.06-1.06a.936.936 0 0 1 1.32 0l1.689 1.689c.362.363.401.991.086 1.396l.002.001Z' fill='%23fff'/%3E%3C/svg%3E");

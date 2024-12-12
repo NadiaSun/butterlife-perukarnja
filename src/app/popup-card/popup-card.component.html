@@ -38,11 +38,13 @@
   </div> -->
   <div class="mp-catalog-item-popup close" (click)="closePopup($event)">
     <img
-      [src]="catalogService.getSrc(popupService.card.imgBig, fullImgStatus ? 'big' : 'little')"
+      [attr.srcset]="catalogService.getSrcSet(popupService.card.imgBig)"
       class="img-popup"
       (click)="fullImgStatus = !fullImgStatus"
       [ngClass]="{'bigImg': fullImgStatus}"
       loading="lazy"
+      sizes="(max-width: 480px) 320px, (max-width: 900px) 480px"
     >
   </div>
 </div>
+<!-- catalogService.getSrc(popupService.card.imgBig, fullImgStatus ? 'big' : 'little') -->
