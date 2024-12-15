@@ -4,8 +4,6 @@ export interface Card {
     price: number;
     promotionalPrice?: number;
     category: Category;
-    img: string;
-    imgBig: string;
     telData?: string;
 }
 type Category = 'Салони краси' | 'Перукарні'
