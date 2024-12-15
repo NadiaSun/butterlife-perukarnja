@@ -13,9 +13,9 @@
 }
 
 
-@media (max-width: 960px) {
+@media (max-width: 767px) {
   .bigImg {
-    width: 150%!important;
+    width: 120%!important;
     margin-top: 0px!important;
   }
 }
@@ -32,10 +32,6 @@
 .img-popup {
     width: 80%;
     margin-top: 30px;
-}
-.bigImg {
-    width: 120%;
-    margin-top: 0px;
 }
 
 .hovertext {
