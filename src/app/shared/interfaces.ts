@@ -5,5 +5,6 @@ export interface Card {
     promotionalPrice?: number;
     category: Category;
     telData?: string;
+    format: '.png' | '.jpg'
 }
-type Category = 'Салони краси' | 'Перукарні'
+export type Category = 'Салони краси' | 'Нерухомість'

@@ -5,7 +5,8 @@
     <h1 class="mp-catalog__title" data="catalog">
       <font style="vertical-align: inherit">
         <font style="vertical-align: inherit">
-          Ширина экрана: {{test}}
+          <font class="mp-catalog-category" [routerLinkActive]="'active'" [routerLink]="['/beautysalon']">{{this.catalogService.catalogBeautySalon[0].category}}</font> /
+          <font class="mp-catalog-category" [routerLinkActive]="'active'" [routerLink]="['/realty']">{{this.catalogService.catalogRealty[0].category}}</font>
           <!-- Оренда готових сайтів -->
         </font>
       </font>
@@ -19,14 +20,14 @@
 
         <!-- ------------------------ Card ------------------------- -->
 
-        <div class="mp-catalog-item-wrap" *ngFor="let card of catalogService.catalogBeautyCalon">
+        <div class="mp-catalog-item-wrap" *ngFor="let card of catalogService.catalog">
           <div class="mp-catalog-item js-catalog-item expanded" data-src="" data-id="" data-type="solution"
             data-name="" data-popup_form="solution-order-lightgallery-panel" data-popup_object_type_id=""
             data-popup_object_id="">
             <div class="big-card" (click)="popupService.openCard(card)">
               <div class="mp-catalog-item__label mp-catalog-item__label--new text-big-card">Демо версія сайту</div>
             </div>
-            <img class="card" (click)="popupService.openCard(card)" [src]="'../assets/img/383-cut/'+ card.id + '.jpg'" alt=""/>
+            <img class="card" (click)="popupService.openCard(card)" [src]="'../assets/img/' + catalogService.category + '/383-cut/'+ card.id + card.format" alt=""/>
             <!-- </a> -->
 
 
