@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CatalogService } from '../shared/catalog.service';
 import { PopupService } from '../shared/popup.service';
+import { Category } from '../shared/interfaces';
 
 
 @Component({
@@ -15,6 +16,5 @@ export class CatalogContentComponent {
     public catalogService: CatalogService,
     public popupService: PopupService
   ) {}
-
 
 }

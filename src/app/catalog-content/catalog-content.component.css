@@ -1,0 +1,8 @@
+.mp-catalog-category {
+    cursor: pointer;
+    color: black;
+}
+
+.mp-catalog-category.active {
+    color: #0169d9;
+}
