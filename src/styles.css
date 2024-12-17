@@ -168,6 +168,7 @@ img.card {
   right: 4.5vw;
   top: 2vh;
   cursor: pointer;
+  user-select: none;
 }
 
 .popup {
@@ -201,6 +202,7 @@ img.card {
     overflow-y: scroll;
     text-align: center;
     display: block;
+    user-select: none;
   }
   .img-popup {
     width: 100%;

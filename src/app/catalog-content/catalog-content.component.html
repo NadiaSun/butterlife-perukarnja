@@ -20,12 +20,12 @@
 
         <!-- ------------------------ Card ------------------------- -->
 
-        <div class="mp-catalog-item-wrap" *ngFor="let card of catalogService.catalog">
+        <div class="mp-catalog-item-wrap" *ngFor="let card of catalogService.catalog; index as i">
           <div class="mp-catalog-item js-catalog-item expanded" data-src="" data-id="" data-type="solution"
             data-name="" data-popup_form="solution-order-lightgallery-panel" data-popup_object_type_id=""
             data-popup_object_id="">
             <div class="big-card" (click)="popupService.openCard(card)">
-              <div class="mp-catalog-item__label mp-catalog-item__label--new text-big-card">Демо версія сайту</div>
+              <div class="mp-catalog-item__label mp-catalog-item__label--new text-big-card">Збільшити</div>
             </div>
             <img class="card" (click)="popupService.openCard(card)" [src]="'../assets/img/' + catalogService.category + '/383-cut/'+ card.id + card.format" alt=""/>
             <!-- </a> -->
@@ -34,33 +34,26 @@
 
             <div class="mp-catalog-item__controls">
               <!-- flag block !-->
-              <div class="mp-catalog-item__label-wrap">
-                <div class="mp-catalog-item__label mp-catalog-item__label--new">
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">
-                      Новинка
-                    </font>
-                  </font>
-                </div>
-              </div>
+              
               <!-- flag block !-->
 
               <div class="mp-catalog-item__controls-top">
                 <div class="mp-catalog-item__controls-inner">
-                  <p class="mp-catalog-item__id">
+                  <!-- <p class="mp-catalog-item__id">
                     <font style="vertical-align: inherit">
                       <font style="vertical-align: inherit">{{card.category}}(#{{card.id}})</font>
                     </font>
-                  </p>
+                  </p> -->
 
-                  <a href="#" class="mp-catalog-item__title js-analytics"
+                  <!-- <a href="#" class="mp-catalog-item__title js-analytics"
                     data-analytics-target="target_solution_name_solution">
                     <font style="vertical-align: inherit">
                       <font style="vertical-align: inherit">
                         {{card.name}}
                       </font>
                     </font>
-                  </a>
+                  </a> -->
+                  
                 </div>
 
 
@@ -86,8 +79,16 @@
 
 
                 </div>
-
-                <div class="mp-catalog-item__btns">
+                <div *ngIf="i === 5 || i === 9 || i === 16" class="mp-catalog-item__label-wrap">
+                  <div class="mp-catalog-item__label mp-catalog-item__label--new">
+                    <font style="vertical-align: inherit">
+                      <font style="vertical-align: inherit">
+                        Новинка
+                      </font>
+                    </font>
+                  </div>
+                </div>
+                <!-- <div class="mp-catalog-item__btns">
                   <a data-analytics-target="target_solution_demo_solution" target="_blank"
                     class="cd-btn mp-catalog-item__demo-btn js-analytics"
                     (click)="popupService.openMessenger(card)">
@@ -106,7 +107,7 @@
                       </font>
                     </font>
                   </a>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
