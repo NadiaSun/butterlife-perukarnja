@@ -8,6 +8,7 @@ export class PopupService {
   public card!: Card;
   popupCard: boolean = false;
   popupMessenger: boolean = false;
+  popupMessengerTwo: boolean = false;
 
   constructor() { }
 
@@ -21,11 +22,17 @@ export class PopupService {
     this.card = card;
   }
 
-  closePopup(value: 'messenger' | 'card') {
+  openMessengerTwo() {
+    this.popupMessengerTwo = true;
+  }
+
+  closePopup(value: 'messenger' | 'card' | 'messengerTwo') {
     if(value === 'messenger') {
       this.popupMessenger = false;
     } else if(value === 'card') {
       this.popupCard = false;
+    } else if(value === 'messengerTwo') {
+      this.popupMessengerTwo = false;
     }
   }
 }
