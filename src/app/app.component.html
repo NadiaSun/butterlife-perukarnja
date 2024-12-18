@@ -8,13 +8,14 @@
   
   <div class="overlay" *ngIf="popupService.popupMessenger" (click)="popupService.closePopup('messenger')" style="display: block"></div>
   
+  <div class="overlay" *ngIf="popupService.popupMessengerTwo" (click)="popupService.closePopup('messengerTwo')" style="display: block"></div>
+  
   <div class="mp-catalog sites">
   
     <div class="mp-catalog__inner search-overlay-before" data-urldir="solution">
       <div class="mp-wrapp mp-catalog__wrapp mp-wrapp--for-solution">
-        <app-catalog></app-catalog>
-  
-       <app-catalog-content></app-catalog-content>
+
+        <app-catalog-content style="display: flex"></app-catalog-content>
       </div>
     </div>
   </div>

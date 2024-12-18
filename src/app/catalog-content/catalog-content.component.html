@@ -1,134 +1,196 @@
+<div class="mp-catalog__menu js-sticky-container">
+  <div class="js-sticky sticky catalog-menu">
+    <div class="inner-wrapper-sticky" style="
+          position: relative;
+          transform: translate3d(0px, 0px, 0px);
+        ">
+
+      <div class="mp-catalog-menu__wrapp">
+        <p class="mp-catalog-menu__list-title">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">категорія</font>
+          </font>
+        </p>
+
+        <div class="mp-catalog-menu__inner js-categories-base">
+          <nav class="mp-catalog-menu__list">
+            <div class="mp-catalog-menu__link-outer js-base-categories js-show-categories">
+
+              <!-- ------------------------ Заголовок ------------------------- -->
+
+              <div class="mp-catalog-menu__link-wrapp mp-catalog-menu__link-wrapp--wide">
+                <a class="mp-catalog-menu__link" data-id="292">
+                  <font style="vertical-align: inherit">
+                    <font class="mp-catalog-category" [routerLinkActive]="'active'" [routerLink]="['/beautysalon']">{{this.catalogService.catalogBeautySalon[0].category}}</font>
+                  </font>
+                  <!-- <div class="mp-catalog-menu__link-sub">
+
+                  </div> -->
+                </a>
+                <a class="mp-catalog-menu__link" data-id="292">
+                  <font style="vertical-align: inherit">
+                    <font class="mp-catalog-category" [routerLinkActive]="'active'" [routerLink]="['/realty']">{{this.catalogService.catalogRealty[0].category}}</font>
+                  </font>
+                  <!-- <div class="mp-catalog-menu__link-sub">
+
+                  </div> -->
+                </a>
+              </div>
+
+              <!-- ------------------------ Заголовок ------------------------- -->
+
+
+            </div>
+          </nav>
+
+        </div>
+      </div>
+
+      <div class="mp-catalog-menu__wrapp mp-menu-formsteps">
+        <div (click)="popupService.openMessengerTwo()" class="cd-btn large mp-menu-formsteps__btn js-menu-formsteps">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">Запитати</font>
+          </font>
+        </div>
+        <p class="mp-menu-formsteps__title">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">Поставити запитання у чаті</font>
+          </font>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="mp-catalog__content">
 
-    <!-- ------------------------ Заголовок ------------------------- -->
+  <!-- ------------------------ Заголовок ------------------------- -->
 
-    <h1 class="mp-catalog__title" data="catalog">
+  <h1 class="mp-catalog__title" data="catalog">
+    <font style="vertical-align: inherit">
       <font style="vertical-align: inherit">
-        <font style="vertical-align: inherit">
-          <font class="mp-catalog-category" [routerLinkActive]="'active'" [routerLink]="['/beautysalon']">{{this.catalogService.catalogBeautySalon[0].category}}</font> /
-          <font class="mp-catalog-category" [routerLinkActive]="'active'" [routerLink]="['/realty']">{{this.catalogService.catalogRealty[0].category}}</font>
-          <!-- Оренда готових сайтів -->
-        </font>
+        <font>Оренда готових сайтів</font>
+        <!-- Оренда готових сайтів -->
       </font>
-    </h1>
-    <!-- ------------------------ Заголовок ------------------------- -->
+    </font>
+  </h1>
+  <!-- ------------------------ Заголовок ------------------------- -->
 
-    <!-- ------------------------ Catalog ------------------------- -->
+  <!-- ------------------------ Catalog ------------------------- -->
 
-    <div class="mp-catalog-content lightgallery">
-      <div class="mp-catalog-content__inner mp-catalog-item--redesign">
+  <div class="mp-catalog-content lightgallery">
+    <div class="mp-catalog-content__inner mp-catalog-item--redesign">
 
-        <!-- ------------------------ Card ------------------------- -->
+      <!-- ------------------------ Card ------------------------- -->
 
-        <div class="mp-catalog-item-wrap" *ngFor="let card of catalogService.catalog; index as i">
-          <div class="mp-catalog-item js-catalog-item expanded" data-src="" data-id="" data-type="solution"
-            data-name="" data-popup_form="solution-order-lightgallery-panel" data-popup_object_type_id=""
-            data-popup_object_id="">
-            <div class="big-card" (click)="popupService.openCard(card)">
-              <div class="mp-catalog-item__label mp-catalog-item__label--new text-big-card">Збільшити</div>
+      <div class="mp-catalog-item-wrap" *ngFor="let card of catalogService.catalog; index as i">
+        <div class="mp-catalog-item js-catalog-item expanded" data-src="" data-id="" data-type="solution"
+          data-name="" data-popup_form="solution-order-lightgallery-panel" data-popup_object_type_id=""
+          data-popup_object_id="">
+          <div class="big-card" (click)="popupService.openCard(card)">
+            <div class="mp-catalog-item__label mp-catalog-item__label--new text-big-card">Збільшити</div>
+          </div>
+          <img class="card" (click)="popupService.openCard(card)" [src]="'../assets/img/' + catalogService.category + '/383-cut/'+ card.id + card.format" alt=""/>
+          <!-- </a> -->
+
+
+
+          <div class="mp-catalog-item__controls">
+            <!-- flag block !-->
+            
+            <!-- flag block !-->
+
+            <div class="mp-catalog-item__controls-top">
+              <div class="mp-catalog-item__controls-inner">
+                <!-- <p class="mp-catalog-item__id">
+                  <font style="vertical-align: inherit">
+                    <font style="vertical-align: inherit">{{card.category}}(#{{card.id}})</font>
+                  </font>
+                </p> -->
+
+                <!-- <a href="#" class="mp-catalog-item__title js-analytics"
+                  data-analytics-target="target_solution_name_solution">
+                  <font style="vertical-align: inherit">
+                    <font style="vertical-align: inherit">
+                      {{card.name}}
+                    </font>
+                  </font>
+                </a> -->
+                
+              </div>
+
+
+
+
             </div>
-            <img class="card" (click)="popupService.openCard(card)" [src]="'../assets/img/' + catalogService.category + '/383-cut/'+ card.id + card.format" alt=""/>
-            <!-- </a> -->
 
-
-
-            <div class="mp-catalog-item__controls">
-              <!-- flag block !-->
-              
-              <!-- flag block !-->
-
-              <div class="mp-catalog-item__controls-top">
-                <div class="mp-catalog-item__controls-inner">
-                  <!-- <p class="mp-catalog-item__id">
+            <div class="mp-catalog-item__controls-bottom cashback-enabled">
+              <div class="mp-catalog-item__price">
+                <span class="mp-catalog-item__price-current">
+                  <font style="vertical-align: inherit">
                     <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">{{card.category}}(#{{card.id}})</font>
+                      {{card.promotionalPrice}} грн
                     </font>
-                  </p> -->
-
-                  <!-- <a href="#" class="mp-catalog-item__title js-analytics"
-                    data-analytics-target="target_solution_name_solution">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">
-                        {{card.name}}
-                      </font>
-                    </font>
-                  </a> -->
-                  
-                </div>
-
+                  </font>
+                </span>
+                <span class="mp-catalog-item__price-old">
+                  <font style="vertical-align: inherit">
+                    <font style="vertical-align: inherit">{{card.price}} грн</font>
+                  </font>
+                </span>
 
 
 
               </div>
-
-              <div class="mp-catalog-item__controls-bottom cashback-enabled">
-                <div class="mp-catalog-item__price">
-                  <span class="mp-catalog-item__price-current">
+              <div *ngIf="i === 5 || i === 9 || i === 16" class="mp-catalog-item__label-wrap">
+                <div class="mp-catalog-item__label mp-catalog-item__label--new">
+                  <font style="vertical-align: inherit">
                     <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">
-                        {{card.promotionalPrice}} грн
-                      </font>
+                      Новинка
                     </font>
-                  </span>
-                  <span class="mp-catalog-item__price-old">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">{{card.price}} грн</font>
-                    </font>
-                  </span>
-
-
-
+                  </font>
                 </div>
-                <div *ngIf="i === 5 || i === 9 || i === 16" class="mp-catalog-item__label-wrap">
-                  <div class="mp-catalog-item__label mp-catalog-item__label--new">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">
-                        Новинка
-                      </font>
-                    </font>
-                  </div>
-                </div>
-                <!-- <div class="mp-catalog-item__btns">
-                  <a data-analytics-target="target_solution_demo_solution" target="_blank"
-                    class="cd-btn mp-catalog-item__demo-btn js-analytics"
-                    (click)="popupService.openMessenger(card)">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit" >
-                        Оренда
-                      </font>
-                    </font>
-                  </a>
-                  <a data-analytics-target="target_solution_more_solution"
-                    class="cd-btn mp-catalog-item__more-btn js-analytics"
-                    (click)="popupService.openMessenger(card)">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">
-                        Бронювання
-                      </font>
-                    </font>
-                  </a>
-                </div> -->
               </div>
+              <!-- <div class="mp-catalog-item__btns">
+                <a data-analytics-target="target_solution_demo_solution" target="_blank"
+                  class="cd-btn mp-catalog-item__demo-btn js-analytics"
+                  (click)="popupService.openMessenger(card)">
+                  <font style="vertical-align: inherit">
+                    <font style="vertical-align: inherit" >
+                      Оренда
+                    </font>
+                  </font>
+                </a>
+                <a data-analytics-target="target_solution_more_solution"
+                  class="cd-btn mp-catalog-item__more-btn js-analytics"
+                  (click)="popupService.openMessenger(card)">
+                  <font style="vertical-align: inherit">
+                    <font style="vertical-align: inherit">
+                      Бронювання
+                    </font>
+                  </font>
+                </a>
+              </div> -->
             </div>
           </div>
         </div>
-        <!-- ------------------------ Card ------------------------- -->
-
       </div>
-    </div>
+      <!-- ------------------------ Card ------------------------- -->
 
-    <!-- ------------------------ Catalog ------------------------- -->
-
-    <div class="mp-catalog__text-bot">
-      <p class="mp-catalog__text-paragraph pictured">
-        <span class="mp-catalog__text-previewText">
-          Оренда готових сайтів для салонів краси — це зручне рішення для тих, хто прагне швидко запустити свій
-          бізнес онлайн без зайвих витрат часу та ресурсів. Готовий сайт дозволяє салонам краси зосередитися на
-          обслуговуванні клієнтів, уникаючи тривалих етапів розробки веб-ресурсу. Такі сайти зазвичай вже мають
-          адаптивний дизайн, зручну структуру та всі необхідні функції: онлайн-запис, фотогалереї, відгуки,
-          інформацію про послуги та ціни. Оренда також включає технічну підтримку і регулярні оновлення, що
-          дозволяє салону завжди бути на висоті сучасних технологій.
-        </span>
-      </p>
     </div>
   </div>
+
+  <!-- ------------------------ Catalog ------------------------- -->
+
+  <div class="mp-catalog__text-bot">
+    <p class="mp-catalog__text-paragraph pictured">
+      <span class="mp-catalog__text-previewText">
+        Оренда готових сайтів для салонів краси — це зручне рішення для тих, хто прагне швидко запустити свій
+        бізнес онлайн без зайвих витрат часу та ресурсів. Готовий сайт дозволяє салонам краси зосередитися на
+        обслуговуванні клієнтів, уникаючи тривалих етапів розробки веб-ресурсу. Такі сайти зазвичай вже мають
+        адаптивний дизайн, зручну структуру та всі необхідні функції: онлайн-запис, фотогалереї, відгуки,
+        інформацію про послуги та ціни. Оренда також включає технічну підтримку і регулярні оновлення, що
+        дозволяє салону завжди бути на висоті сучасних технологій.
+      </span>
+    </p>
+  </div>
+</div>

@@ -114,7 +114,7 @@ onResize() {
 }
 
 srcTelBot(id: string): string {
-  return `https://tg.pulse.is/CalmHaven_bot?start=66e2aa4a16c4d6f9e10c2bbe|id_site=${id}`
+ return `https://tg.pulse.is/CalmHaven_bot?start=66e2aa4a16c4d6f9e10c2bbe|id_site=${id}`
 }
 
   closePopup() {
