@@ -6,7 +6,7 @@
     z-index: 10;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1080px) {
     .mp-catalog-item__demo-btn, .mp-catalog-item__more-btn {
         width: 15vw;
     }
@@ -46,4 +46,60 @@
 
 .popup-price {
     font-size: 12px;
+}
+
+
+.qu {
+    width: 30px;
+    /* background: silver;
+    border-radius: 50%; */
+    height: 30px;
+    transform: translate(15px, 0);
+}
+
+.qu-popup {
+    z-index: 2000;
+    position: absolute;
+    width: 280px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    text-align: center;
+    align-content: center;
+    border: 1px #d1d1d1 solid;
+    padding: 10px;
+    font-size: 15px;
+    top: 20%;
+}
+
+@media (min-width: 900px) {
+    .qu-popup  {
+        left: 80%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+    .qu-popup  {
+        right: 20%;
+        width: 240px;
+    }
+}
+
+@media (min-width: 440px) and (max-width: 599px) {
+    .qu-popup  {
+        width: 240px;
+        top: 30%;
+    }
+}
+
+@media (max-width: 439px) {
+    .qu-popup  {
+        width: 240px;
+        top: 40px;
+        left: 20%;
+        position: fixed;
+    }
+}
+
+.mp-catalog-item__demo-btn, .mp-catalog-item__more-btn {
+    position: relative;
 }

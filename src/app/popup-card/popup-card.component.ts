@@ -16,6 +16,9 @@ export class PopupCardComponent {
   public fullImgStatus: boolean = false;
   windowT: number = window.screenTop;
   
+  popupQuRen: boolean = false;
+  popupQuRes: boolean = false;
+  
   public get scroll(): boolean {
     console.log(this.windowT)
     console.log(window.screenTop)
@@ -31,6 +34,30 @@ export class PopupCardComponent {
     const $event = event.target as HTMLTemplateElement
     if ($event.classList.contains('close')) {
       this.popupService.closePopup('card')
+    }
+  }
+
+  closeQu(event: Event) {
+    const t: HTMLElement = event.target as HTMLElement;
+    if(!t.classList.contains('qu')){
+      this.popupQuRen = false;
+      this.popupQuRes = false;
+    }
+  }
+
+  onClickBtn(event: Event) {
+    const t: HTMLElement = event.target as HTMLElement;
+    console.log(this.popupQuRen)
+    if(t.classList.contains('qu')) {
+      if(t.id === 'ren') {
+        this.popupQuRen = !this.popupQuRen;
+      }
+      
+      if(t.id === 'res') {
+        this.popupQuRes = !this.popupQuRes;
+      }
+    } else {
+      this.popupService.openMessenger(this.popupService.card)
     }
   }
 }
