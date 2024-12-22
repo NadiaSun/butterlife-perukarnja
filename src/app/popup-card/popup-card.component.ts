@@ -51,11 +51,16 @@ export class PopupCardComponent {
     if(t.classList.contains('qu')) {
       if(t.id === 'ren') {
         this.popupQuRen = !this.popupQuRen;
+        this.popupQuRes = false;
       }
       
       if(t.id === 'res') {
         this.popupQuRes = !this.popupQuRes;
+        this.popupQuRen = false;
       }
+    } else if (t.classList.contains('qu-popup') || t.classList.contains('qu-text')) {
+      this.popupQuRen = false;
+      this.popupQuRes = false;
     } else {
       this.popupService.openMessenger(this.popupService.card)
     }
