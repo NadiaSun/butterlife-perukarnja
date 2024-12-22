@@ -12,7 +12,7 @@ export class CatalogService {
   card!: Card;
   sub!: Subscription;
   width: number = window.innerWidth;
-  category: 'beautysalon' | 'realty' = 'beautysalon'
+  category: 'beautysalon' | 'realty' = 'beautysalon';
 
   constructor(private route: Router) {
   

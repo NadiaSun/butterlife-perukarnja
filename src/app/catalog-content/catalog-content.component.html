@@ -21,7 +21,8 @@
               <div class="mp-catalog-menu__link-wrapp mp-catalog-menu__link-wrapp--wide">
                 <a class="mp-catalog-menu__link" data-id="292">
                   <font style="vertical-align: inherit">
-                    <font class="mp-catalog-category" [routerLinkActive]="'active'" [routerLink]="['/beautysalon']">{{this.catalogService.catalogBeautySalon[0].category}}</font>
+                    <font class="mp-catalog-category"
+                    (click)="slowDownload()" [routerLinkActive]="'active'" [routerLink]="['/beautysalon']">{{this.catalogService.catalogBeautySalon[0].category}}</font>
                   </font>
                   <!-- <div class="mp-catalog-menu__link-sub">
 
@@ -29,7 +30,8 @@
                 </a>
                 <a class="mp-catalog-menu__link" data-id="292">
                   <font style="vertical-align: inherit">
-                    <font class="mp-catalog-category" [routerLinkActive]="'active'" [routerLink]="['/realty']">{{this.catalogService.catalogRealty[0].category}}</font>
+                    <font class="mp-catalog-category" 
+                    (click)="slowDownload()" [routerLinkActive]="'active'" [routerLink]="['/realty']">{{this.catalogService.catalogRealty[0].category}}</font>
                   </font>
                   <!-- <div class="mp-catalog-menu__link-sub">
 
@@ -61,7 +63,7 @@
     </div>
   </div>
 </div>
-<div class="mp-catalog__content">
+<div class="mp-catalog__content" >
 
   <!-- ------------------------ Заголовок ------------------------- -->
 
@@ -76,8 +78,10 @@
   <!-- ------------------------ Заголовок ------------------------- -->
 
   <!-- ------------------------ Catalog ------------------------- -->
-
-  <div class="mp-catalog-content lightgallery">
+  <div class="preload" *ngIf="!status">
+    <div class="loader"></div>
+  </div>
+  <div class="mp-catalog-content lightgallery" [ngStyle]="{opacity: status ? '100' : '0'}">
     <div class="mp-catalog-content__inner mp-catalog-item--redesign">
 
       <!-- ------------------------ Card ------------------------- -->
@@ -89,7 +93,11 @@
           <div class="big-card" (click)="popupService.openCard(card)">
             <div class="mp-catalog-item__label mp-catalog-item__label--new text-big-card">Збільшити</div>
           </div>
-          <img class="card" (click)="popupService.openCard(card)" [src]="'../assets/img/' + catalogService.category + '/383-cut/'+ card.id + card.format" alt=""/>
+          <img
+          class="card"
+          [id]="i"
+          (click)="popupService.openCard(card)"
+          [src]="'../assets/img/' + catalogService.category + '/383-cut/'+ card.id + card.format" alt=""/>
           <!-- </a> -->
 
 
@@ -181,15 +189,13 @@
 
   <!-- ------------------------ Catalog ------------------------- -->
 
-  <div class="mp-catalog__text-bot">
+  <div class="mp-catalog__text-bot" [ngStyle]="{opacity: status ? '100' : '0'}">
     <p class="mp-catalog__text-paragraph pictured">
-      <span class="mp-catalog__text-previewText">
-        Оренда готових сайтів для салонів краси — це зручне рішення для тих, хто прагне швидко запустити свій
-        бізнес онлайн без зайвих витрат часу та ресурсів. Готовий сайт дозволяє салонам краси зосередитися на
-        обслуговуванні клієнтів, уникаючи тривалих етапів розробки веб-ресурсу. Такі сайти зазвичай вже мають
-        адаптивний дизайн, зручну структуру та всі необхідні функції: онлайн-запис, фотогалереї, відгуки,
-        інформацію про послуги та ціни. Оренда також включає технічну підтримку і регулярні оновлення, що
-        дозволяє салону завжди бути на висоті сучасних технологій.
+      <span class="mp-catalog__text-previewText" *ngIf="route.url === '/beautysalon'">
+        Оренда готових сайтів для салонів краси – це швидкий і доступний спосіб створити професійний онлайн-образ для вашого бізнесу. Ви отримуєте сучасний дизайн, оптимізований під ваші потреби, без великих початкових витрат. Сайти вже налаштовані для залучення клієнтів через зручне онлайн-бронювання та SEO-оптимізацію. Це ідеальне рішення для тих, хто хоче зосередитися на розвитку бізнесу, а не на технічних деталях.
+      </span>
+      <span class="mp-catalog__text-previewText" *ngIf="route.url === '/realty'">
+        Оренда готових сайтів для нерухомості дозволяє швидко вийти на ринок із професійною онлайн-платформою. Ви отримуєте функціональний сайт із зручним пошуком об'єктів, інтеграцією карт та контактних форм без великих фінансових вкладень. Це рішення ідеально підходить для агентств та рієлторів, які хочуть привернути більше клієнтів та підвищити продажі. Крім того, готовий сайт легко оновлюється і масштабується відповідно до ваших потреб.
       </span>
     </p>
   </div>

@@ -8,6 +8,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { CatalogContentComponent } from './catalog-content/catalog-content.component';
 import { PopupCardComponent } from './popup-card/popup-card.component';
 import { PopupMessengerComponent } from './popup-messenger/popup-messenger.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PopupMessengerComponent } from './popup-messenger/popup-messenger.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

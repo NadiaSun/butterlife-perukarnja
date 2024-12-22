@@ -1,9 +1,15 @@
-<div class="popup" *ngIf="popupService.popupCard" >
+<div class="popup" *ngIf="popupService.popupCard" (click)="closeQu($event)" >
   <div class="mp-catalog-item__btns popup_btns close" (click)="closePopup($event)">
     <a data-analytics-target="target_solution_demo_solution" target="_blank"
       class="cd-btn mp-catalog-item__demo-btn js-analytics"
-      (click)="popupService.openMessenger(popupService.card)"
+      (click)="onClickBtn($event)"
       >
+      <div class="qu-popup" *ngIf="popupQuRen">
+        <p>
+          При замовленні оренди ми відразу розпочинаємо виготовлення сайту за вибраним замовником дизайном.
+        </p>
+      </div>
+  
       <font style="vertical-align: inherit">
         <font style="vertical-align: inherit" >
           Оренда
@@ -12,10 +18,22 @@
         <font class="popup-price">{{popupService.card.promotionalPrice}} грн на міс.</font>
         
       </font>
+      <div><img
+        class="qu"
+        id="ren"
+        src="../assets/img/question.png"
+        ></div>
     </a>
+    
     <a data-analytics-target="target_solution_more_solution"
       class="cd-btn mp-catalog-item__more-btn js-analytics"
-      (click)="popupService.openMessenger(popupService.card)">
+      (click)="onClickBtn($event)">
+      
+      <div class="qu-popup" *ngIf="popupQuRes">
+        <p style="color: black">
+          При замовленні бронювання дизайн знімається з торгового майданчика і дотримується замовника протягом обумовленого часу. Замовник може одночасно забронювати декілька дизайнів сайтів.
+        </p>
+      </div>
       <font style="vertical-align: inherit">
         <font style="vertical-align: inherit">
           Бронювання
@@ -24,6 +42,8 @@
         <font class="popup-price">10 грн на день.</font>
 
       </font>
+      <div>
+        <img class="qu" id="res" src="../assets/img/question.png"></div>
     </a>
   </div>
   <!-- <div class="id-site">
