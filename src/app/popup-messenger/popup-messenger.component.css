@@ -23,6 +23,12 @@ a {
     background: #c58ccf!important;
 }
 
+@media (max-width: 600) {
+    .close-btn {
+        display: none;
+    }
+}
+
 .close-btn:hover {
     background: #d7a6e0!important;
 }
@@ -35,39 +41,39 @@ a {
 .email_form {
     justify-items: center;
     margin-bottom: 20px;
-    .font_form {
-        font-size: 24px;
-        font-weight: 700;
-        letter-spacing: -.4px;
-        text-align: center;
-        color: #333;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    .control_form {
-    }
-    .field {
-        border: none;
-        background: none;
-        margin: 10px 10px;
-        border-bottom: 1px solid #25d366;
-        width: 100%;
-    }
-    input:hover, input:focus, input:active {
-        outline: 0
-    }
-    .submit_btn {
-        border: none;
-        background-color: #25d366;
-        border-radius: 24px;
-        width: 200px;
-        height: 40px;
-        color: white;
-        margin: 15px 10px;
-        font-size: 20px;
-    }
+    
 }
-
+.font_form {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -.4px;
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.control_form {
+}
+.field {
+    border: none;
+    background: none;
+    margin: 10px 10px;
+    border-bottom: 1px solid #25d366;
+    width: 100%;
+}
+input:hover, input:focus, input:active {
+    outline: 0
+}
+.submit_btn {
+    border: none;
+    background-color: #25d366;
+    border-radius: 24px;
+    width: 200px;
+    height: 40px;
+    color: white;
+    margin: 15px 10px;
+    font-size: 20px;
+}
 .form_btn {
     .cd-request-popup__title {
     margin-top: 40px;
