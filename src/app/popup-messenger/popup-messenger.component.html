@@ -1,6 +1,6 @@
 <div class="cd-request-popup js-cd-popup" data-name="header-callback" *ngIf="popupService.popupMessenger">
     <!-- На отправку этой формы надо навесить цель ga('send', 'event', 'design_megagroup_header', 'order_call', 'form_submit'); -->
-    
+    <div class="id-site"><i>ID дизайна:</i> <span> {{popupService.card.id}}</span> </div>
       <button class="cd-request-popup__close js-close-cd-popup cd-btn secondary close-btn" 
         (click)="popupService.closePopup('messenger')"
       >
@@ -11,14 +11,33 @@
       </button>
 
     <div class="cd-request-popup__content js-popup-content js-request">
+      
+      <form class="email_form" action="">
+        <p class="font_form">Оформити замовлення:</p>
+        <div class="control_form">
+          <input
+            class="field"
+            type="text"
+            placeholder="Name"
+            >
+          <input
+            class="field"
+            type="tel"
+            placeholder="Phone"
+            >
+        </div>
+        <button class="submit_btn">Замовити</button>
+        
+      </form>
+      
       <p class="cd-request-popup__title">
         <font style="vertical-align: inherit">
-          <font style="vertical-align: inherit">Оформити замовлення через:</font>
+          <font style="vertical-align: inherit">Пишіть нам:</font>
         </font>
       </p>
   
-      <div class="mp-form-wrapper">
-        <p class="mp-request-popup__text"></p>
+      <div class="mp-form-wrapper form_btn">
+        <!-- <p class="mp-request-popup__text"></p> -->
         <form method="post" action="/" class="cd-form js-cd-form form" data-object="/solution">
   
           <div class="mp-form__btn">
@@ -101,3 +120,106 @@
       </div>
     </div>
   </div>
+
+
+  <!-- <div class="cd-request-popup js-cd-popup" data-name="header-callback">
+     <div class="id-site"><i>ID дизайна:</i> <span> site13</span> </div>
+      <button class="cd-request-popup__close js-close-cd-popup cd-btn secondary close-btn" 
+        (click)="popupService.closePopup('messengerTwo')"
+      >
+        <img 
+          src="../assets/img/cross_w.png"
+          alt=""
+          (click)="popupService.closePopup('messengerTwo')" class="img-close close">
+      </button>
+
+    <div class="cd-request-popup__content js-popup-content js-request">
+      <p class="cd-request-popup__title">
+        <font style="vertical-align: inherit">
+          <font style="vertical-align: inherit">Пишіть нам:</font>
+        </font>
+      </p>
+  
+      <div class="mp-form-wrapper">
+        <p class="mp-request-popup__text"></p>
+        <form method="post" action="/" class="cd-form js-cd-form form" data-object="/solution">
+  
+          <div class="mp-form__btn">
+            <button type="submit" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #25d366;">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit" style="display: flex; ">
+                  <div class="whatsapp-btn mp-button"></div> WhatsApp</font>
+              </font>
+            </button>
+            <a href="https://tg.pulse.is/CalmHaven_bot" target="_blank" class="btn-href">
+              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #0088cc;">
+                <font style="vertical-align: inherit">
+                  <font style="vertical-align: inherit" style="display: flex; ">
+                    <div class="tg-btn mp-button"></div> Telegram</font>
+                </font>
+              </button>
+            </a>
+            <button type="submit" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #7360f2;">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit" style="display: flex; ">
+                  <div class="viber-btn mp-button"></div> Viber</font>
+              </font>
+            </button>
+            <a href="tel:+380000000000" class="tell-btn">Зателефонувати</a>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <div class="cd-request-popup js-cd-popup" data-name="header-callback" *ngIf="popupService.popupMessenger">
+    <button class="cd-request-popup__close js-close-cd-popup cd-btn secondary close-btn" 
+        (click)="popupService.closePopup('messenger')"
+      >
+        <img 
+          src="../assets/img/cross_w.png"
+          alt=""
+          (click)="popupService.closePopup('messenger')" class="img-close close">
+      </button>
+
+    <div class="cd-request-popup__content js-popup-content js-request">
+      <p class="cd-request-popup__title">
+        <font style="vertical-align: inherit">
+          <font style="vertical-align: inherit">Пишіть нам:</font>
+        </font>
+      </p>
+  
+      <div class="mp-form-wrapper">
+        <p class="mp-request-popup__text"></p>
+        <form method="post" action="/" class="cd-form js-cd-form form" data-object="/solution">
+  
+          <div class="mp-form__btn">
+            <button type="submit" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #25d366;">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit" style="display: flex; ">
+                  <div class="whatsapp-btn mp-button"></div> WhatsApp</font>
+              </font>
+            </button>
+            <a href={{catalogService.srcTelBot(popupService.card.id)}} target="_blank" class="btn-href">
+              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #0088cc;">
+                <font style="vertical-align: inherit">
+                  <font style="vertical-align: inherit" style="display: flex; ">
+                    <div class="tg-btn mp-button"></div> Telegram</font>
+                </font>
+              </button>
+            </a>
+            <button type="submit" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #7360f2;">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit" style="display: flex; ">
+                  <div class="viber-btn mp-button"></div> Viber</font>
+              </font>
+            </button>
+            <a href="tel:+380000000000" class="tell-btn">Зателефонувати</a>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> -->
