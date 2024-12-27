@@ -5258,7 +5258,7 @@ body:not(.ie-fix) .mp-catalog-item-wrap {
 
 .cd-request-popup {
     position: fixed;
-    top: 15%;
+    top: 10%;
     width: 80%;
     max-width: 400px;
     z-index: 1063;
