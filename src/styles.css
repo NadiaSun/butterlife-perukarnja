@@ -1,7 +1,12 @@
+@import "../node_modules/intl-tel-input/build/css/intlTelInput.css";
+
 @media (max-width: 900px) {
   .tell-btn {
     display: block !important;
   }
+}
+.iti.iti--allow-dropdown.separate-dial-code {
+  width: 100%
 }
 
 .tell-btn {

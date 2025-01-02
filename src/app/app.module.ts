@@ -9,6 +9,9 @@ import { CatalogContentComponent } from './catalog-content/catalog-content.compo
 import { PopupCardComponent } from './popup-card/popup-card.component';
 import { PopupMessengerComponent } from './popup-messenger/popup-messenger.component';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxIntlTelInputModule } from '@justin-s/ngx-intl-tel-input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,16 @@ import { CommonModule } from '@angular/common';
     CatalogComponent,
     CatalogContentComponent,
     PopupMessengerComponent,
-    PopupCardComponent
+    PopupCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxIntlTelInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
