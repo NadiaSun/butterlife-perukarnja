@@ -49,8 +49,16 @@ a {
     letter-spacing: -.4px;
     text-align: center;
     color: #333;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.mp-request-popup__outer{
+    width: 100%
+}
+
+.text_form {
+    font-size: 14px;
 }
 .control_form {
 }
@@ -66,13 +74,24 @@ input:hover, input:focus, input:active {
 }
 .submit_btn {
     border: none;
-    background-color: #25d366;
+    background-color: #1ca345;
     border-radius: 24px;
     width: 200px;
     height: 40px;
     color: white;
-    margin: 15px 10px;
-    font-size: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+
+.success_form {
+    background-color: #c6ffc6;
+    border: 1px green dashed;
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 30px;
+    color: green;
+    border-radius: 10px 10px 0px 0px;
 }
 .form_btn {
     .cd-request-popup__title {
