@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PopupService } from '../shared/popup.service';
-import { Card } from '../shared/interfaces';
+import { Card, Email } from '../shared/interfaces';
 import { CatalogService } from '../shared/catalog.service';
+import { EmailService } from '../shared/email.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ValidatorName } from '../shared/form.validator';
 
 @Component({
   selector: 'app-popup-messenger',
@@ -10,9 +13,42 @@ import { CatalogService } from '../shared/catalog.service';
 })
 export class PopupMessengerComponent implements OnInit {
   card!: Card;
+  form: FormGroup;
+  status: boolean = false
 
-  constructor(public popupService: PopupService, public catalogService: CatalogService) {
+  constructor(
+    public popupService: PopupService,
+    public catalogService: CatalogService,
+    private emailService: EmailService) {
   }
   ngOnInit(): void {
+    this.form = new FormGroup({
+      name: new FormControl('', [
+        Validators.required, ValidatorName
+      ]),
+      phone: new FormControl(null, Validators.required)
+    })
+  }
+
+  sendEmail() {
+    if (this.form.invalid) {
+      this.form.touched
+      return
+    }
+    
+    const data: Email = {
+      from_name:  this.form.value.name,
+      from_email: 'whitefox1331@gmail.com',
+      message:  this.form.value.phoneInt ? this.form.value.phoneInt.e164Number : ''
+    };
+    this.status = true
+
+    this.emailService.sendEmail(data).then(() => {
+      this.popupService.card.status = true;
+      this.form.reset()
+    })
+    .catch(() => {
+    this.status = false
+    });
   }
 }

@@ -73,6 +73,7 @@ input:hover, input:focus, input:active {
     outline: 0
 }
 .submit_btn {
+    cursor: pointer;
     border: none;
     background-color: #1ca345;
     border-radius: 24px;
@@ -99,4 +100,22 @@ input:hover, input:focus, input:active {
     margin-bottom: 0px;
     }
 
+}
+.submit_btn:active .submit_btn:valid {
+    transform: translateY(2px);
+    background-color: #2bc559;
+}
+.submit_btn:hover {
+    background-color: #2bc559;
+}
+.submit_btn:disabled {
+    background-color: #a9a9a9!important;
+    cursor: not-allowed;
+}
+
+.invalid, .invalid:hover, .invalid:active, .invalid:focus {
+    border-color: red!important;
+    input {
+        border-color: red!important;
+    }
 }
