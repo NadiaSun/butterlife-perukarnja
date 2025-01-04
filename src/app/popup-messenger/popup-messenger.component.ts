@@ -39,7 +39,7 @@ export class PopupMessengerComponent implements OnInit {
     const data: Email = {
       from_name:  this.form.value.name,
       from_email: 'whitefox1331@gmail.com',
-      message:  this.form.value.phoneInt ? `Phone: ${this.form.value.phoneInt.internationalNumber}, id-site: ${this.popupService.card.id}` : ''
+      message:  this.form.value.phone ? `Phone: ${this.form.value.phone.internationalNumber}, id-site: ${this.popupService.card.id}` : ''
     };
     this.status = true
 
