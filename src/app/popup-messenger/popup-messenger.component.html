@@ -12,7 +12,11 @@
 
     <div class="cd-request-popup__content js-popup-content js-request">
       
-      <!-- <form class="email_form" action="">
+      <form
+      *ngIf="!popupService.card.status"
+      class="email_form"
+      [formGroup]="form"
+      (ngSubmit)="sendEmail()">
         <p class="font_form">Залишіть заявку:</p>
         <p class="text_form">І наш фахівець зв'яжеться з вами</p>
         
@@ -21,13 +25,17 @@
           <div class="mp-request-popup__inner">
             <label class="cd-input cd-field required">
               <span class="cd-input__wrapper">
-                <input type="text" class="cd-input__field" name="name" placeholder="Ім'я" />
+                <input type="text" class="cd-input__field"
+                [ngClass]="{invalid: form.get('name')?.invalid && form.get('name')?.touched}"
+                formControlName="name" name="name" placeholder="Ім'я" />
               </span>
               
             </label>
       
             <ngx-intl-tel-input
-                    class=""
+
+            [ngClass]="{invalid: form.get('phone')?.invalid && form.get('phone')?.touched}"
+            formControlName="phone"
                     [cssClass]="'cd-input__field'"
                     [preferredCountries]="['ua']"
                     [enableAutoCountrySelect]="true"
@@ -39,9 +47,12 @@
                   ></ngx-intl-tel-input>
           </div>
         </div>
-        <button class="submit_btn">Замовити</button>
-      </form> -->
-      <div class="success_form">
+        <button
+        class="submit_btn"
+        type="submit"
+        [disabled]="form.invalid || status">Замовити</button>
+      </form>
+      <div class="success_form" *ngIf="popupService.card.status">
         <p>Дякуємо! Ми зв'яжемося з вами найближчим часом.</p>
       </div>
 
