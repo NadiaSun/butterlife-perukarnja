@@ -118,6 +118,6 @@ input:hover, input:focus, input:active {
     
 }
 
-.invalid>div>input {
+.invalid input {
     border-color: red!important;
 }
