@@ -41,6 +41,7 @@ a {
 .email_form {
     justify-items: center;
     margin-bottom: 20px;
+    text-align: center;
     
 }
 .font_form {
@@ -60,8 +61,7 @@ a {
 .text_form {
     font-size: 14px;
 }
-.control_form {
-}
+
 .field {
     border: none;
     background: none;
@@ -115,7 +115,9 @@ input:hover, input:focus, input:active {
 
 .invalid, .invalid:hover, .invalid:active, .invalid:focus {
     border-color: red!important;
-    input {
-        border-color: red!important;
-    }
+    
+}
+
+.invalid>input {
+    border-color: red!important;
 }
