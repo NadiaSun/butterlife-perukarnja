@@ -1,7 +1,6 @@
-import { AfterContentInit, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { CatalogService } from '../shared/catalog.service';
 import { PopupService } from '../shared/popup.service';
-import { Category } from '../shared/interfaces';
 import { Router } from '@angular/router';
 
 
