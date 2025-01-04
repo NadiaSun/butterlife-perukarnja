@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener} from '@angular/core';
+import { Component} from '@angular/core';
 import { CatalogService } from '../shared/catalog.service';
 import { PopupService } from '../shared/popup.service';
 
@@ -19,16 +19,6 @@ export class PopupCardComponent {
   popupQuRen: boolean = false;
   popupQuRes: boolean = false;
   
-  public get scroll(): boolean {
-    console.log(this.windowT)
-    console.log(window.screenTop)
-    if (this.windowT !== window.screenTop) {
-      this.windowT = window.screenTop
-      return true
-    } else {
-      return false
-    }
-  }
 
   closePopup(event: Event) {
     const $event = event.target as HTMLTemplateElement

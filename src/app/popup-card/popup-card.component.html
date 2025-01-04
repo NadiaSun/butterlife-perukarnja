@@ -46,22 +46,12 @@
         <img class="qu" id="res" src="../assets/img/question.png"></div>
     </a>
   </div>
-  <!-- <div class="id-site">
-    
-    <p> ID: #{{popupService.card.id}}</p>
-  
-  </div> -->
   <div class="close-popup close"><img 
     src="../assets/img/cross_w.png"
     alt=""
     (click)="popupService.closePopup('card')" class="img-close close">
   </div>
-  <!-- <div class="arrowhead-popup">
-    <img class="left" src="../assets/img/arrowhead_l.png" alt="">
-  </div>
-  <div class="arrowhead-popup">
-    <img class="right" src="../assets/img/arrowhead_r.png" alt="">
-  </div> -->
+  
   <div class="mp-catalog-item-popup close" (click)="closePopup($event)">
     <img
       [attr.srcset]="catalogService.getSrcSet(popupService.card.id, popupService.card.format, fullImgStatus)"
@@ -72,4 +62,3 @@
     >
   </div>
 </div>
-<!-- catalogService.getSrc(popupService.card.imgBig, fullImgStatus ? 'big' : 'little') -->
