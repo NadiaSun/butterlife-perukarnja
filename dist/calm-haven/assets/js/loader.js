@@ -1,1 +1,0 @@
-(function(d){var s=d.createElement("script");s.src="//counter.megagroup.ru/api.js?v=6";d.getElementsByTagName("head")[0].appendChild(s);})(document);
