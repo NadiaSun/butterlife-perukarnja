@@ -10,9 +10,12 @@ export interface Card {
 
 export interface Email {
     [key: string]: unknown;
-    from_name: string,
-    from_email: string,
-    message: string
+    name: string,
+    phone: string,
+    rental: string,
+    width: string,
+    from_email: string;
+    id_site: string;
 }
 
 export type Category = 'Салони краси' | 'Нерухомість'

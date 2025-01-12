@@ -5,6 +5,10 @@
 a {
     text-decoration: none;
 }
+.form_submit_btn {
+    margin: 10px 10px!important;
+}
+
 .id-site {
     position: absolute;
     top: -20px;
@@ -14,9 +18,16 @@ a {
         font-size: 14px;
     }
     span {
-        color: white;
+        color: #4aff60;;
         font-weight: bold;
+        font-size: 18px;
     }
+}
+
+.qu-popup {
+    top: auto;
+    background-color: #feff79;
+    transform: translateX(10%);
 }
 
 .close-btn {
@@ -101,6 +112,10 @@ input:hover, input:focus, input:active {
     }
 
 }
+
+.cd-form {
+    text-align: center;
+}
 .submit_btn:active .submit_btn:valid {
     transform: translateY(2px);
     background-color: #2bc559;
@@ -118,6 +133,4 @@ input:hover, input:focus, input:active {
     
 }
 
-.invalid input {
-    border-color: red!important;
-}
+

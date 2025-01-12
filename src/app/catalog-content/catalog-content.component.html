@@ -72,7 +72,7 @@
     <div class="mp-catalog-content__inner mp-catalog-item--redesign">
 
       
-      <div class="mp-catalog-item-wrap" *ngFor="let card of catalogService.catalog; index as i">
+      <div class="mp-catalog-item-wrap" *ngFor="let card of catalogService.catalog | slice:0:end; index as i">
         <div class="mp-catalog-item js-catalog-item expanded" data-src="" data-id="" data-type="solution"
           data-name="" data-popup_form="solution-order-lightgallery-panel" data-popup_object_type_id=""
           data-popup_object_id="">
@@ -83,15 +83,12 @@
           class="card"
           [id]="i"
           (click)="popupService.openCard(card)"
-          [src]="'../assets/img/' + catalogService.category + '/383-cut/'+ card.id + card.format" alt=""/>
+          [attr.srcset]="catalogService.getCutSrcSet(card.id, card.format)"
+          alt=""/>
           <div class="mp-catalog-item__controls">
-            <div class="mp-catalog-item__controls-top">
-              <div class="mp-catalog-item__controls-inner">
-              
-              </div>
-            </div>
-
             <div class="mp-catalog-item__controls-bottom cashback-enabled">
+              
+            <div style="display: flex; width: 100%">
               <div class="mp-catalog-item__price">
                 <span class="mp-catalog-item__price-current">
                   <font style="vertical-align: inherit">
@@ -105,10 +102,13 @@
                     <font style="vertical-align: inherit">{{card.price}} грн</font>
                   </font>
                 </span>
-
-
-
               </div>
+
+              <div class="id-block">
+                <p style="margin: 0;">ID: {{card.id}}</p>
+              </div>
+            </div>
+
               <div *ngIf="i === 5 || i === 9 || i === 16" class="mp-catalog-item__label-wrap">
                 <div class="mp-catalog-item__label mp-catalog-item__label--new">
                   <font style="vertical-align: inherit">

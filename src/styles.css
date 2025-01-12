@@ -5,16 +5,65 @@
     display: block !important;
   }
 }
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.preload {
+  width: 100%;
+  height: 100%;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.qu-popup {
+  z-index: 2000;
+  position: absolute;
+  width: 280px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  text-align: center;
+  align-content: center;
+  border: 1px #d1d1d1 solid;
+  padding: 10px;
+  font-size: 15px;
+  top: 20%;
+  cursor: auto;
+  user-select: none;
+}
+
+.qu-close {
+  width: 15px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+
 .iti.iti--allow-dropdown.separate-dial-code {
   width: 100%
 }
 
 .tell-btn {
-  display: none;
   color: #0088cc;
     cursor: pointer;
     text-decoration: none;
   text-align: center;
+  margin-top: 10px;
 }
 
 body {
@@ -174,6 +223,11 @@ img.card {
   top: 2vh;
   cursor: pointer;
   user-select: none;
+}
+
+
+.invalid>*>input {
+  border-color: red!important;
 }
 
 .popup {
@@ -2517,6 +2571,15 @@ img.card {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  .form-popup .mp-form__btn {
+    display: flex;
+    justify-content: center;
+}
+
+.form-popup .mp-button {
+    margin-right: 0px!important
+}
   
   #onicon .onicon-chat-popup__controls {
     float: right;

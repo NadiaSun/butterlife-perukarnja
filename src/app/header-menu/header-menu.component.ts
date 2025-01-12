@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PopupService } from '../shared/popup.service';
 
 @Component({
   selector: 'app-header-menu',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./header-menu.component.css']
 })
 export class HeaderMenuComponent {
+  constructor(public popupService: PopupService) {
 
+  }
 }
