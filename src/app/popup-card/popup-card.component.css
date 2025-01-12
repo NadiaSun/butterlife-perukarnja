@@ -22,10 +22,10 @@
         transform: translate(20px, 0);
     }
 }
-@media (max-width: 420px) {
+@media (max-width: 440px) {
     .mp-catalog-item__demo-btn, .mp-catalog-item__more-btn {
-        width: 150px;
-        font-size: 13px;
+        width: 140px;
+        font-size: 12px;
     }
     .popup-price {
         font-size: 9px!important;
