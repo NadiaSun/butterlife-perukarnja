@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Card } from './shared/interfaces';
 import { CatalogService } from './shared/catalog.service';
 import { PopupService } from './shared/popup.service';
@@ -8,6 +8,8 @@ import { PopupService } from './shared/popup.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(public popupService: PopupService) {}
+  ngOnInit(): void {
+  }
 }

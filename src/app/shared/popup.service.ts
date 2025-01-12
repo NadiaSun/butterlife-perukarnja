@@ -9,6 +9,8 @@ export class PopupService {
   popupCard: boolean = false;
   popupMessenger: boolean = false;
   popupMessengerTwo: boolean = false;
+  popupData: boolean = false
+  public rental: string = ''
 
   constructor() { }
 
@@ -27,6 +29,7 @@ export class PopupService {
   }
 
   closePopup(value: 'messenger' | 'card' | 'messengerTwo') {
+    console.log(value)
     if(value === 'messenger') {
       this.popupMessenger = false;
     } else if(value === 'card') {
@@ -34,5 +37,6 @@ export class PopupService {
     } else if(value === 'messengerTwo') {
       this.popupMessengerTwo = false;
     }
+    this.popupData = false
   }
 }

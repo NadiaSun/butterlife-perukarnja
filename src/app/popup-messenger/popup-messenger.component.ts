@@ -14,7 +14,7 @@ import { ValidatorName } from '../shared/form.validator';
 export class PopupMessengerComponent implements OnInit {
   card!: Card;
   form: FormGroup;
-  status: boolean = false
+  status: boolean = false;
 
   constructor(
     public popupService: PopupService,
@@ -30,17 +30,21 @@ export class PopupMessengerComponent implements OnInit {
     })
   }
 
-  sendEmail() {
+  sendEmail(rentalSite?: string) {
     if (this.form.invalid) {
       this.form.touched
       return
     }
     console.log(this.form)
     const data: Email = {
-      from_name:  this.form.value.name,
+      name:  this.form.value.name,
       from_email: 'whitefox1331@gmail.com',
-      message:  this.form.value.phone ? `Phone: ${this.form.value.phone.internationalNumber}, id-site: ${this.popupService.card.id}` : ''
-    };
+      id_site: this.popupService.card.id,
+      rental: this.popupService.rental,
+      width: `${window.innerWidth}`,
+      phone:  this.form.value.phone ? `${this.form.value.phone.internationalNumber}` : '',
+    }
+
     this.status = true
 
     this.emailService.sendEmail(data).then(() => {

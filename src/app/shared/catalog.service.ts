@@ -70,6 +70,14 @@ public get catalog(): Card[] {
   return this.catalogBeautySalon
 }
 
+getCutSrcSet(img: string, format: '.png' | '.jpg') {
+  if(this.category === 'beautysalon') {
+    return `../assets/img/${this.category}/383-cut/${img}${format}, 
+    ../assets/img/${this.category}/600-cut/${img}_600${format} 3x`
+  }
+  return `../assets/img/${this.category}/383-cut/${img}${format}`
+}
+
 getSrcSet(img: string, format: '.png' | '.jpg', big?: boolean): string {
   const w = window.innerWidth;
   if (w <= 479) {

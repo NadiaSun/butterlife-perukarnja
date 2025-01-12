@@ -2,6 +2,7 @@ import {Component, OnInit } from '@angular/core';
 import { CatalogService } from '../shared/catalog.service';
 import { PopupService } from '../shared/popup.service';
 import { Router } from '@angular/router';
+import { Card } from '../shared/interfaces';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 export class CatalogContentComponent implements OnInit {
   test: any = window.innerWidth
   status: boolean = false;
+  end: number = 6
 
   constructor(
     public catalogService: CatalogService,
@@ -22,6 +24,10 @@ export class CatalogContentComponent implements OnInit {
     setTimeout(()=> {
       this.status = true
     }, 800)
+    
+    setTimeout(()=> {
+      this.end = 100
+    }, 2000)
   }
 
   slowDownload(){
