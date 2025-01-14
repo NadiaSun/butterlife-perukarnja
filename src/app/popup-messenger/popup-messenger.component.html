@@ -1,6 +1,5 @@
 <div class="cd-request-popup js-cd-popup form-popup" data-name="header-callback" *ngIf="popupService.popupMessenger">
     <!-- На отправку этой формы надо навесить цель ga('send', 'event', 'design_megagroup_header', 'order_call', 'form_submit'); -->
-    <div class="id-site"><i>ID дизайна:</i> <span> {{popupService.card.id}}</span> </div>
       <button class="cd-request-popup__close js-close-cd-popup cd-btn secondary close-btn" 
         (click)="popupService.closePopup('messenger')"
       >
@@ -57,7 +56,7 @@
           </p>
           <div class="qu-popup" *ngIf="popupService.popupData">
             <p class="qu-text">
-              Справжнім Я, діючи своєю волею та у своєму інтересі, при розміщенні (введенні) своїх персональних даних на Інтернет-сайті, підтверджую свою згоду на обробку вказаних мною даних Оператором з метою надання мені послуг, пропонованих Оператором.
+              Підтверджую свою згоду на обробку введених даних для надання послуги з оренди/бронювання сайту
             </p>
             <img class="qu-close" (click)="popupService.popupData = false" src="../assets/img/cross.png">
           </div>
@@ -66,7 +65,7 @@
         
       </form>
       <div class="success_form" *ngIf="popupService.card.status">
-        <p>Дякуємо! Ми зв'яжемося з вами найближчим часом.</p>
+        <p>Дякуємо! Ми зв'яжемося з вами. Якщо є питання - пишіть у чаті.</p>
       </div>
 
       <p class="cd-request-popup__title">
@@ -77,19 +76,22 @@
   
       <div class="mp-form-wrapper form_btn">
         <!-- <p class="mp-request-popup__text"></p> -->
-        <form method="post" action="/" class="cd-form js-cd-form form" data-object="/solution">
+        <form method="post" action="/" class="cd-form js-cd-form form" style="justify-items: center;"  data-object="/solution">
   
           <div class="mp-form__btn">
-            <a href="https://wa.me/380975760466?text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D1%96%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83:%20https://butterlife-kappa.vercel.app/" class="btn-href" target="_blank">
-              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #25d366;">
+            
+            <a [href]="hrefViber" target="_blank" class="btn-href">
+              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #7360f2;">
                 <font style="vertical-align: inherit">
                   <font style="vertical-align: inherit" style="display: flex; ">
-                    <div class="whatsapp-btn mp-button"></div>
-                    <!-- <div class="whatsapp-btn mp-button"></div> WhatsApp -->
+                    <div class="viber-btn mp-button"></div>
+                    <!-- <div class="viber-btn mp-button"></div> Viber -->
                   </font>
                 </font>
               </button>
             </a>
+            
+            
             
             <a href={{catalogService.srcTelBot(popupService.card.id)}} target="_blank" class="btn-href">
               <button type="button" class="cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #0088cc;">
@@ -101,19 +103,19 @@
                 </font>
               </button>
             </a>
-            <a href="viber://chat?number=%2B380975760466&draft=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D1%96%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83:%20https://butterlife-kappa.vercel.app/" target="_blank" class="btn-href">
-              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #7360f2;">
+            <a [href]="hrefWhatsApp" class="btn-href" target="_blank">
+              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #25d366;">
                 <font style="vertical-align: inherit">
                   <font style="vertical-align: inherit" style="display: flex; ">
-                    <div class="viber-btn mp-button"></div>
-                    <!-- <div class="viber-btn mp-button"></div> Viber -->
+                    <div class="whatsapp-btn mp-button"></div>
+                    <!-- <div class="whatsapp-btn mp-button"></div> WhatsApp -->
                   </font>
                 </font>
               </button>
             </a>
-            
           </div>
-          <a href="tel:+380000000000" class="tell-btn">+38 (000) 000 00 00</a>
+          <a href="tel:+380975760466" class="tell-btn">+38(097)57-60-466</a>
+          <div class="id-site"><i>ID дизайна:</i> <span> {{popupService.card.id}}</span> </div>
         </form>
       </div>
     </div>
@@ -141,6 +143,23 @@
         <form method="post" action="/" class="cd-form js-cd-form form" data-object="/solution">
   
           <div class="mp-form__btn">
+            
+            <a href="viber://chat?number=%2B380975760466&draft=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D1%96%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83:%20https://butterlife-kappa.vercel.app/" target="_blank" class="btn-href">
+              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #7360f2;">
+                <font style="vertical-align: inherit">
+                  <font style="vertical-align: inherit" style="display: flex; ">
+                    <div class="viber-btn mp-button"></div> Viber</font>
+                </font>
+              </button>
+            </a>
+            <a href="https://t.me/WebsiteRental_bot?start=67858bc16adb5735ba055c4c" target="_blank" class="btn-href">
+              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #0088cc;">
+                <font style="vertical-align: inherit">
+                  <font style="vertical-align: inherit" style="display: flex; ">
+                    <div class="tg-btn mp-button"></div> Telegram</font>
+                </font>
+              </button>
+            </a>
             <a href="https://wa.me/380975760466?text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D1%96%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83:%20https://butterlife-kappa.vercel.app/" class="btn-href" target="_blank">
               <button type="button" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #25d366;">
                 <font style="vertical-align: inherit">
@@ -150,24 +169,8 @@
               </button>
             </a>
             
-            <a href="https://tg.pulse.is/CalmHaven_bot" target="_blank" class="btn-href">
-              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #0088cc;">
-                <font style="vertical-align: inherit">
-                  <font style="vertical-align: inherit" style="display: flex; ">
-                    <div class="tg-btn mp-button"></div> Telegram</font>
-                </font>
-              </button>
-            </a>
-            <a href="viber://chat?number=%2B380975760466&draft=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D1%96%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83:%20https://butterlife-kappa.vercel.app/" target="_blank" class="btn-href">
-              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #7360f2;">
-                <font style="vertical-align: inherit">
-                  <font style="vertical-align: inherit" style="display: flex; ">
-                    <div class="viber-btn mp-button"></div> Viber</font>
-                </font>
-              </button>
-            </a>
             
-            <a href="tel:+380000000000" class="tell-btn">Зателефонувати</a>
+            <a href="tel:+380975760466" class="tell-btn">+38(097)57-60-466</a>
           </div>
         </form>
       </div>

@@ -10,15 +10,17 @@ a {
 }
 
 .id-site {
-    position: absolute;
-    top: -20px;
-    left: 0;
-    color: #e3e3e3;
+    margin-top: 10px;
+    color: #242424;
+    width: fit-content;
+    border: #7d28c1 1px solid;
+    border-radius: 15px;
+    padding: 4px 10px;
     i {
         font-size: 14px;
     }
     span {
-        color: #4aff60;;
+        color: #7d28c1;
         font-weight: bold;
         font-size: 18px;
     }

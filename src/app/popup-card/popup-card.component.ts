@@ -48,7 +48,7 @@ export class PopupCardComponent{
     }
   }
 
-  onClickBtn(event: Event, rental: string) {
+  onClickBtn(event: Event, rental: 'rent' | 'reservation') {
     const t: HTMLElement = event.target as HTMLElement;
     if(t.classList.contains('qu')) {
       if(t.id === 'ren') {

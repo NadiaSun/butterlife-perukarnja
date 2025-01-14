@@ -15,11 +15,16 @@ export class PopupMessengerComponent implements OnInit {
   card!: Card;
   form: FormGroup;
   status: boolean = false;
-
   constructor(
     public popupService: PopupService,
     public catalogService: CatalogService,
     private emailService: EmailService) {
+  }
+  get hrefViber(): string  {
+    return `viber://chat?number=%2B380975760466&draft=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D0%B7%20${this.popupService.rental === 'rent' ? '%D0%BE%D1%80%D0%B5%D0%BD%D0%B4%D0%B8' : '%D0%B1%D1%80%D0%BE%D0%BD%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F'}%20%D1%81%D0%B0%D0%B9%D1%82%D1%83%20-%20${this.popupService.card.id}`
+  }
+  get hrefWhatsApp(): string  {
+    return `https://wa.me/380975760466?text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D0%B7%20${this.popupService.rental === 'rent' ? '%D0%BE%D1%80%D0%B5%D0%BD%D0%B4%D0%B8' : '%D0%B1%D1%80%D0%BE%D0%BD%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F'}%20%D1%81%D0%B0%D0%B9%D1%82%D1%83%20-%20${this.popupService.card.id}`
   }
   ngOnInit(): void {
     this.form = new FormGroup({
