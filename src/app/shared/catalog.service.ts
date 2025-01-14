@@ -2,6 +2,7 @@ import { HostListener, Injectable, OnDestroy } from '@angular/core';
 import { Card } from './interfaces';
 import { Subject, Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PopupService } from './popup.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class CatalogService {
   width: number = window.innerWidth;
   category: 'beautysalon' | 'realty' = 'beautysalon';
 
-  constructor(private route: Router) {
+  constructor(private route: Router, private popupService: PopupService) {
   
   }
 
@@ -122,7 +123,7 @@ onResize() {
 }
 
 srcTelBot(id: string): string {
- return `https://tg.pulse.is/CalmHaven_bot?start=66e2aa4a16c4d6f9e10c2bbe|id_site=${id}`
+ return `https://tg.pulse.is/WebsiteRental_bot?start=678586f2e8716273530d6c75|id_site=${id}|rental=${this.popupService.rental}`
 }
 
   closePopup() {
