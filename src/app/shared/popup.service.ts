@@ -10,7 +10,7 @@ export class PopupService {
   popupMessenger: boolean = false;
   popupMessengerTwo: boolean = false;
   popupData: boolean = false
-  public rental: string = ''
+  public rental: 'reservation' | 'rent' = 'rent'
 
   constructor() { }
 
