@@ -13,7 +13,7 @@ import { Card } from '../shared/interfaces';
 export class CatalogContentComponent implements OnInit {
   test: any = window.innerWidth
   status: boolean = false;
-  end: number = 6
+  end: number = window.innerWidth < 700 ? 3 : 6;
 
   constructor(
     public catalogService: CatalogService,
@@ -27,7 +27,7 @@ export class CatalogContentComponent implements OnInit {
     
     setTimeout(()=> {
       this.end = 100
-    }, 2000)
+    }, 4000)
   }
 
   slowDownload(){
