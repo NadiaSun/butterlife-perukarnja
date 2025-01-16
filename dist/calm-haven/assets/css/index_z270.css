@@ -3362,6 +3362,7 @@ body:not(.ie-fix) .mp-catalog-item-wrap {
     background-color: #fff;
     padding: 16px;
     transition: transform 0.2s ease-out;
+    cursor: auto;
 }
 
 @media all and (min-width: 1200px) {
