@@ -13,7 +13,7 @@ export class CatalogService {
   card!: Card;
   sub!: Subscription;
   width: number = window.innerWidth;
-  category: 'realty' = 'realty';
+  category: 'beautysalon' = 'beautysalon';
 
   constructor(private route: Router, private popupService: PopupService) {
   
