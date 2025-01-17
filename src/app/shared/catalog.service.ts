@@ -19,65 +19,33 @@ export class CatalogService {
   
   }
 
-catalogRealty: Card[] = [{id: "ri_1", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_2", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_3", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_4", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_5", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_6", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_7", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_8", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_9", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_10", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_11", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_12", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_13", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_14", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_15", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_16", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_17", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_18", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_19", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_20", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_21", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_22", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_23", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_24", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_25", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_26", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_27", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_28", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_29", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_30", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_31", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_32", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_33", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_34", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_35", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_36", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_37", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_38", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_39", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}, {id: "ri_40", name: 'Сайт з нерухомості', price: 700, promotionalPrice: 500, category: 'Нерухомість', format: '.png', status: false
-}]
+  catalogBeautySalon: Card[] = [{id: "salon2", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon3", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon4", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon5", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon6", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon7", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon8", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon9", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon10", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon11", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon12", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon13", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon14", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon15", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon16", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon17", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+}, {id: "salon18", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
+},
+
+]
 
 
 public get catalog(): Card[] {
-  // if(this.route.url === '/beautysalon') {
-  //   this.category = 'beautysalon'
-  //   return this.catalogBeautySalon
-  // } else if (this.route.url === '/realty') {
-  //   this.category = 'realty'
-  //   return this.catalogRealty
-  // }
-  return this.catalogRealty
+  return this.catalogBeautySalon
 }
 
 getCutSrcSet(img: string, format: '.png' | '.jpg') {
-  // if(this.category === 'beautysalon') {
-  //   return `../assets/img/${this.category}/383-cut/${img}${format}, 
-  //   ../assets/img/${this.category}/600-cut/${img}_600${format} 3x`
-  // }
   return `../assets/img/${this.category}/383-cut/${img}${format}`
 }
 
