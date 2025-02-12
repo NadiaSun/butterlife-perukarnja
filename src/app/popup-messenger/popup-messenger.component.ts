@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { PopupService } from '../shared/popup.service';
 import { Card, Email } from '../shared/interfaces';
 import { CatalogService } from '../shared/catalog.service';
@@ -12,9 +12,14 @@ import { ValidatorName } from '../shared/form.validator';
   styleUrls: ['./popup-messenger.component.css']
 })
 export class PopupMessengerComponent implements OnInit {
+  @ViewChild('popupMessage', {static: false}) popupMessage: ElementRef;
   card!: Card;
   form: FormGroup;
   status: boolean = false;
+  startMouse: number = 0
+  get height(): number {
+    return window.innerHeight
+  }
   constructor(
     public popupService: PopupService,
     public catalogService: CatalogService,
@@ -59,5 +64,21 @@ export class PopupMessengerComponent implements OnInit {
     .catch(() => {
     this.status = false
     });
+  }
+  scroll(value: number) {
+    
+    this.startMouse += value;
+    if(this.startMouse > 0) {
+      this.startMouse = 0
+    }
+    if(this.startMouse <= -360) {
+      this.startMouse = -360
+    }
+    this.popupMessage.nativeElement.style.transform = `translateY(${this.startMouse}px)`
+  }
+
+  closePopup() {
+    this.startMouse = 0
+    this.popupService.closePopup('messenger')
   }
 }

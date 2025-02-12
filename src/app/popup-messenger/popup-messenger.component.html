@@ -1,176 +1,186 @@
 <div class="cd-request-popup js-cd-popup form-popup" data-name="header-callback" *ngIf="popupService.popupMessenger">
-    <!-- На отправку этой формы надо навесить цель ga('send', 'event', 'design_megagroup_header', 'order_call', 'form_submit'); -->
-      <button class="cd-request-popup__close js-close-cd-popup cd-btn secondary close-btn" 
-        (click)="popupService.closePopup('messenger')"
-      >
-        <img 
-          src="../assets/img/cross_w.png"
-          alt=""
-          (click)="popupService.closePopup('messenger')" class="img-close close">
-      </button>
-
-    <div class="cd-request-popup__content js-popup-content js-request">
-      
-      <form
-      *ngIf="!popupService.card.status"
-      class="email_form"
-      [formGroup]="form"
-      (ngSubmit)="sendEmail()">
-        <p class="font_form">Залишіть заявку:</p>
-        <p class="text_form">І наш фахівець зв'яжеться з вами</p>
+   <button class="cd-request-popup__close js-close-cd-popup cd-btn secondary close-btn" 
+      (click)="closePopup()"
+    >
+      <img 
+        src="../assets/img/cross_w.png"
+        alt=""
+        (click)="closePopup()" class="img-close close">
+    </button>
+    <div style="overflow: hidden;">
+      <div #popupMessage class="cd-request-popup__content js-popup-content js-request">
+    
+        <form
+        *ngIf="!popupService.card.status"
+        class="email_form"
+        [formGroup]="form"
+        (ngSubmit)="sendEmail()">
+          <p class="font_form">Залишіть заявку:</p>
+          <p class="text_form">І наш фахівець зв'яжеться з вами</p>
+          
+  
+          <div class="mp-request-popup__outer">
+            <div class="mp-request-popup__inner">
+              <label class="cd-input cd-field required">
+                <span class="cd-input__wrapper">
+                  <input type="text" class="cd-input__field"
+                  [ngClass]="{invalid: form.get('name')?.invalid && form.get('name')?.touched}"
+                  formControlName="name" name="name" placeholder="Ім'я" />
+                </span>
+                
+              </label>
         
-
-        <div class="mp-request-popup__outer">
-          <div class="mp-request-popup__inner">
-            <label class="cd-input cd-field required">
-              <span class="cd-input__wrapper">
-                <input type="text" class="cd-input__field"
-                [ngClass]="{invalid: form.get('name')?.invalid && form.get('name')?.touched}"
-                formControlName="name" name="name" placeholder="Ім'я" />
-              </span>
-              
-            </label>
-      
-            <ngx-intl-tel-input
-
-            [ngClass]="{invalid: form.get('phone')?.invalid && form.get('phone')?.touched}"
-            formControlName="phone"
-                    [cssClass]="'cd-input__field'"
-                    [enablePlaceholder]="true"
-                    [separateDialCode]="true"
-                    [maxLength]="12"
-                    [onlyCountries]="['ua']"
-                    [enableAutoCountrySelect]="false"
-                  ></ngx-intl-tel-input>
-
-                  
+              <ngx-intl-tel-input
+  
+              [ngClass]="{invalid: form.get('phone')?.invalid && form.get('phone')?.touched}"
+              formControlName="phone"
+                      [cssClass]="'cd-input__field'"
+                      [enablePlaceholder]="true"
+                      [separateDialCode]="true"
+                      [maxLength]="12"
+                      [onlyCountries]="['ua']"
+                      [enableAutoCountrySelect]="false"
+                    ></ngx-intl-tel-input>
+  
+                    
+            </div>
           </div>
-        </div>
-        <button
-        class="submit_btn"
-        type="submit"
-        [disabled]="form.invalid || status">Надіслати</button>
-        <div>
-          <p style="font-size: 13px; margin: 0; margin-top: 2px;">
-          Натискаючи кнопку <b>Надіслати</b>, ви підтверджуєте <span (click)="popupService.popupData = true" style="color: #0088cc; cursor: pointer;">згоду на обробку даних</span>.
-          </p>
-          <div class="qu-popup" *ngIf="popupService.popupData">
-            <p class="qu-text">
-              Підтверджую свою згоду на обробку введених даних для надання послуги з оренди/бронювання сайту
+          <button
+          class="submit_btn"
+          type="submit"
+          [disabled]="form.invalid || status">Надіслати</button>
+          <div>
+            <p style="font-size: 13px; margin: 0; margin-top: 2px;">
+            Натискаючи кнопку <b>Надіслати</b>, ви підтверджуєте <span (click)="popupService.popupData = true" style="color: #0088cc; cursor: pointer;">згоду на обробку даних</span>.
             </p>
-            <img class="qu-close" (click)="popupService.popupData = false" src="../assets/img/cross.png">
+            <div class="qu-popup" *ngIf="popupService.popupData">
+              <p class="qu-text">
+                Підтверджую свою згоду на обробку введених даних для надання послуги з оренди/бронювання сайту
+              </p>
+              <img class="qu-close" (click)="popupService.popupData = false" src="../assets/img/cross.png">
+            </div>
+  
           </div>
-
+          
+        </form>
+        <div class="success_form" *ngIf="popupService.card.status">
+          <p>Дякуємо! Ми зв'яжемося з вами. Якщо є питання - пишіть у чаті.</p>
         </div>
-        
-      </form>
-      <div class="success_form" *ngIf="popupService.card.status">
-        <p>Дякуємо! Ми зв'яжемося з вами. Якщо є питання - пишіть у чаті.</p>
-      </div>
-
-      <p class="cd-request-popup__title">
-        <font style="vertical-align: inherit">
-          <font style="vertical-align: inherit">Зв'язатися з нами:</font>
-        </font>
-      </p>
   
-      <div class="mp-form-wrapper form_btn">
-        <!-- <p class="mp-request-popup__text"></p> -->
-        <form method="post" action="/" class="cd-form js-cd-form form" style="justify-items: center; text-align: center;"  data-object="/solution">
-  
-          <div class="mp-form__btn">
-            
-            <a [href]="hrefViber" target="_blank" class="btn-href">
-              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #7360f2;">
-                <font style="vertical-align: inherit">
-                  <font style="vertical-align: inherit" style="display: flex; ">
-                    <div class="viber-btn mp-button"></div>
-                    <!-- <div class="viber-btn mp-button"></div> Viber -->
+        <p class="cd-request-popup__title">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">Зв'язатися з нами:</font>
+          </font>
+        </p>
+    
+        <div class="mp-form-wrapper form_btn">
+          <!-- <p class="mp-request-popup__text"></p> -->
+          <form method="post" action="/" class="cd-form js-cd-form form" style="justify-items: center; text-align: center; place-items: center; text-align: -webkit-center;">
+    
+            <div class="mp-form__btn">
+              
+              <a [href]="hrefViber" target="_blank" class="btn-href">
+                <button type="button" class="viber cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #7360f2;">
+                  <font style="vertical-align: inherit">
+                    <font style="vertical-align: inherit" style="display: flex; ">
+                      <div class="viber-btn mp-button"></div>
+                      <!-- <div class="viber-btn mp-button"></div> Viber -->
+                    </font>
                   </font>
-                </font>
-              </button>
-            </a>
-            
-            
-            
-            <a href={{catalogService.srcTelBot(popupService.card.id)}} target="_blank" class="btn-href">
-              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #0088cc;">
-                <font style="vertical-align: inherit">
-                  <font style="vertical-align: inherit" style="display: flex; ">
-                    <div class="tg-btn mp-button"></div>
-                    <!-- <div class="tg-btn mp-button"></div> Telegram -->
+                </button>
+              </a>
+              
+              
+              
+              <a href={{catalogService.srcTelBot(popupService.card.id)}} target="_blank" class="btn-href">
+                <button type="button" class="cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #0088cc;">
+                  <font style="vertical-align: inherit">
+                    <font style="vertical-align: inherit" style="display: flex; ">
+                      <div class="tg-btn mp-button"></div>
+                      <!-- <div class="tg-btn mp-button"></div> Telegram -->
+                    </font>
                   </font>
-                </font>
-              </button>
-            </a>
-            <a [href]="hrefWhatsApp" class="btn-href" target="_blank">
-              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #25d366;">
-                <font style="vertical-align: inherit">
-                  <font style="vertical-align: inherit" style="display: flex; ">
-                    <div class="whatsapp-btn mp-button"></div>
-                    <!-- <div class="whatsapp-btn mp-button"></div> WhatsApp -->
+                </button>
+              </a>
+              <a [href]="hrefWhatsApp" class="btn-href" target="_blank">
+                <button type="button" class="cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #25d366;">
+                  <font style="vertical-align: inherit">
+                    <font style="vertical-align: inherit" style="display: flex; ">
+                      <div class="whatsapp-btn mp-button"></div>
+                      <!-- <div class="whatsapp-btn mp-button"></div> WhatsApp -->
+                    </font>
                   </font>
-                </font>
-              </button>
-            </a>
-          </div>
-          <a href="tel:+380975760466" class="tell-btn">+38 (097) 57-60-466</a>
-          <div class="id-site"><i>ID дизайна:</i> <span> {{popupService.card.id}}</span> </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="cd-request-popup js-cd-popup" style="top: 20%" data-name="header-callback" *ngIf="popupService.popupMessengerTwo">
-      <button class="cd-request-popup__close js-close-cd-popup cd-btn secondary close-btn" 
-        (click)="popupService.closePopup('messengerTwo')"
-      >
-        <img 
-          src="../assets/img/cross_w.png"
-          alt=""
-          (click)="popupService.closePopup('messengerTwo')" class="img-close close">
-      </button>
-
-    <div class="cd-request-popup__content js-popup-content js-request">
-      <p class="cd-request-popup__title">
-        <font style="vertical-align: inherit">
-          <font style="vertical-align: inherit">Зв'язатися з нами:</font>
-        </font>
-      </p>
-  
-      <div class="mp-form-wrapper">
-        <p class="mp-request-popup__text"></p>
-        <form method="post" action="/" class="cd-form js-cd-form form" data-object="/solution">
-  
-          <div class="mp-form__btn">
-            
-            <a href="viber://chat?number=%2B380975760466&draft=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D1%96%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83:%20https://perukarnja.online/" target="_blank" class="btn-href">
-              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #7360f2;">
-                <font style="vertical-align: inherit">
-                  <font style="vertical-align: inherit" style="display: flex; ">
-                    <div class="viber-btn mp-button"></div> Viber</font>
-                </font>
-              </button>
-            </a>
-            <a href="https://t.me/WebsiteRental_bot?start=67858bc16adb5735ba055c4c" target="_blank" class="btn-href">
-              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #0088cc;">
-                <font style="vertical-align: inherit">
-                  <font style="vertical-align: inherit" style="display: flex; ">
-                    <div class="tg-btn mp-button"></div> Telegram</font>
-                </font>
-              </button>
-            </a>
-            <a href="https://wa.me/380975760466?text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D1%96%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83:%20https://perukarnja.online/" class="btn-href" target="_blank">
-              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #25d366;">
-                <font style="vertical-align: inherit">
-                  <font style="vertical-align: inherit" style="display: flex; ">
-                    <div class="whatsapp-btn mp-button"></div> WhatsApp</font>
-                </font>
-              </button>
-            </a>
+                </button>
+              </a>
+            </div>
+            <a href="tel:+380682563512" class="tell-btn">+38 (068) 256-35-12</a>
+            <br>
             <a href="tel:+380975760466" class="tell-btn">+38 (097) 57-60-466</a>
-          </div>
-        </form>
+            <div class="id-site"><i>ID дизайна:</i> <span> {{popupService.card.id}}</span> </div>
+          </form>
+        </div>
       </div>
     </div>
+  
+  <!-- <div class="scrollPopup" *ngIf="height < 550">
+    <span class="btnScroll" (click)="scroll(30)">🠉</span>
+    <span class="btnScroll" (click)="scroll(-30)">🠋</span>
+  </div> -->
+</div>
+
+<div class="cd-request-popup js-cd-popup" style="top: 20%" data-name="header-callback" *ngIf="popupService.popupMessengerTwo">
+    <button class="cd-request-popup__close js-close-cd-popup cd-btn secondary close-btn" 
+      (click)="popupService.closePopup('messengerTwo')"
+    >
+      <img 
+        src="../assets/img/cross_w.png"
+        alt=""
+        (click)="popupService.closePopup('messengerTwo')" class="img-close close">
+    </button>
+
+  <div class="cd-request-popup__content js-popup-content js-request">
+    <p class="cd-request-popup__title">
+      <font style="vertical-align: inherit">
+        <font style="vertical-align: inherit">Зв'язатися з нами:</font>
+      </font>
+    </p>
+
+    <div class="mp-form-wrapper">
+      <p class="mp-request-popup__text"></p>
+      <form method="post" action="/" class="cd-form js-cd-form form">
+
+        <div class="mp-form__btn">
+          
+          <a href="viber://chat?number=%2B380975760466&draft=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D1%96%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83:%20https://www.Perukarnja.online/" target="_blank" class="btn-href">
+            <button type="button" class="viber cd-btn js-request form_submit_btn" style="width: 100%; background-color: #7360f2;">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit" style="display: flex; ">
+                  <div class="viber-btn mp-button"></div> Viber</font>
+              </font>
+            </button>
+          </a>
+          <a href="https://t.me/WebsiteRental_bot?start=67858bc16adb5735ba055c4c" target="_blank" class="btn-href">
+            <button type="button" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #0088cc;">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit" style="display: flex; ">
+                  <div class="tg-btn mp-button"></div> Telegram</font>
+              </font>
+            </button>
+          </a>
+          <a href="https://wa.me/380975760466?text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D1%96%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83:%20https://www.Perukarnja.online/" class="btn-href" target="_blank">
+            <button type="button" class="cd-btn js-request form_submit_btn" style="width: 100%; background-color: #25d366;">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit" style="display: flex; ">
+                  <div class="whatsapp-btn mp-button"></div> WhatsApp</font>
+              </font>
+            </button>
+          </a>
+          <a href="tel:+380682563512" class="tell-btn">+38 (068) 256-35-12</a>
+          <br>
+          <a href="tel:+380975760466" class="tell-btn">+38 (097) 57-60-466</a>
+        </div>
+      </form>
+    </div>
   </div>
+</div>
+<div class="overlay" *ngIf="popupService.popupMessenger" (click)="closePopup()" style="display: block"></div>

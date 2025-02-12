@@ -226,6 +226,13 @@ img.card {
   user-select: none;
 }
 
+@media (max-width: 767px) {
+  .img-close {
+    top: 80px;
+  }
+
+}
+
 
 .invalid>*>input {
   border-color: red!important;
@@ -2576,6 +2583,12 @@ img.card {
   .form-popup .mp-form__btn {
     display: flex;
     justify-content: center;
+}
+@media (max-width: 700px) {
+  .viber {
+    display: none;
+  }
+
 }
 
 .form-popup .mp-button {
