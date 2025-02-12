@@ -10,7 +10,6 @@ import { PopupService } from '../shared/popup.service';
 })
 export class PopupCardComponent{
   private popupScroll: ElementRef | undefined;
-  public fullImgStatus: boolean = false;
   windowT: number = window.screenTop;
 
   popupQuRen: boolean = false;

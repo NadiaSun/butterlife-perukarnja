@@ -1,4 +1,4 @@
-<div class="main" [ngClass]="{'scroll-off': popupService.popupMessenger || popupService.popupCard}">
+<div class="main" #app  [ngClass]="{'scroll-off': popupService.popupMessenger || popupService.popupCard}">
   <app-popup-card></app-popup-card>
 
   <app-header-menu></app-header-menu>
@@ -6,7 +6,6 @@
   <app-popup-messenger></app-popup-messenger>
   
   
-  <div class="overlay" *ngIf="popupService.popupMessenger" (click)="popupService.closePopup('messenger')" style="display: block"></div>
   
   <div class="overlay" *ngIf="popupService.popupMessengerTwo" (click)="popupService.closePopup('messengerTwo')" style="display: block"></div>
   
@@ -15,7 +14,7 @@
     <div class="mp-catalog__inner search-overlay-before" data-urldir="solution">
       <div class="mp-wrapp mp-catalog__wrapp mp-wrapp--for-solution">
 
-        <app-catalog-content style="display: flex"></app-catalog-content>
+        <app-catalog-content [app]="appDiv" style="display: flex"></app-catalog-content>
       </div>
     </div>
   </div>

@@ -52,27 +52,89 @@
           </font>
         </p>
       </div>
+      <p class="cd-request-popup__title">
+        <font style="vertical-align: inherit">
+          <font style="vertical-align: inherit">Зв'язатися з нами:</font>
+        </font>
+      </p>
+  
+      <div class="mp-form-wrapper form_btn">
+        <!-- <p class="mp-request-popup__text"></p> -->
+        <form class="cd-form js-cd-form form" style="justify-items: center; text-align: center; place-items: center;">
+  
+          <div class="mp-form__btn btn-catalog">
+            
+            <a href="viber://chat?number=%2B380975760466&draft=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D1%96%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83:%20https://www.Perukarnja.online/" target="_blank" class="btn-href">
+              <button type="button" class="viber cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #7360f2;">
+                <font style="vertical-align: inherit">
+                  <font style="vertical-align: inherit" style="display: flex; ">
+                    <div class="viber-btn mp-button"></div>
+                    <!-- <div class="viber-btn mp-button"></div> Viber -->
+                  </font>
+                </font>
+              </button>
+            </a>
+            
+            
+            
+            <a href="https://t.me/WebsiteRental_bot?start=67858bc16adb5735ba055c4c" target="_blank" class="btn-href">
+              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #0088cc;">
+                <font style="vertical-align: inherit">
+                  <font style="vertical-align: inherit" style="display: flex; ">
+                    <div class="tg-btn mp-button"></div>
+                    <!-- <div class="tg-btn mp-button"></div> Telegram -->
+                  </font>
+                </font>
+              </button>
+            </a>
+            <a href="https://wa.me/380975760466?text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F!%20%D0%97%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8E%D1%81%D1%8F%20%D1%96%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D1%83:%20https://www.Perukarnja.online/" class="btn-href" target="_blank">
+              <button type="button" class="cd-btn js-request form_submit_btn" style="width: 50px; border-radius: 100px; background-color: #25d366;">
+                <font style="vertical-align: inherit">
+                  <font style="vertical-align: inherit" style="display: flex; ">
+                    <div class="whatsapp-btn mp-button"></div>
+                    </font>
+                </font>
+              </button>
+            </a>
+          </div>
+          <div>
+            <a href="tel:+380682563512" class="tell-btn">+38 (068) 256-35-12</a>
+            <br>
+            <a style="position: relative; top: 10px;" href="tel:+380975760466" class="tell-btn">+38 (097) 57-60-466</a>
+          
+          </div>
+          
+        </form>
+      </div>
     </div>
   </div>
 </div>
 <div class="mp-catalog__content" >
 
-  <h1 class="mp-catalog__title" data="catalog">
+  <h1 class="mp-catalog__title" style="margin-bottom: 10px;" data="catalog">
     <font style="vertical-align: inherit">
       <font style="vertical-align: inherit">
         <font>Оренда готових сайтів</font>
       </font>
     </font>
   </h1>
+  <div class="mp-catalog__text-bot" style="margin: 40px 0px 20px; justify-items: center; display: flex; justify-content: center;" [ngStyle]="{opacity: status ? '100' : '0'}">
+
+      <span class="mp-catalog__text-previewText span-text big">Виберіть сайт для бізнесу із {{catalogService.catalog.length}} доступних варіантів:</span>
+      <span class="mp-catalog__text-previewText span-text mobile">Виберіть сайт із {{catalogService.catalog.length}} варіантів:</span>
+  </div>
   
   <div class="preload" *ngIf="!status">
     <div class="loader"></div>
   </div>
   <div class="mp-catalog-content lightgallery" [ngStyle]="{opacity: status ? '100' : '0'}">
-    <div class="mp-catalog-content__inner mp-catalog-item--redesign">
+    <div class="center" style="margin: 10px 0" *ngIf="start !== 0">
+      <button (click)="BackNextButton(-15)" [disabled]="clickBtn" class="cd-btn secondary load-more" id="get_more" style="display: inline-block; background-color: #e4ffe5;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Завантажити попередні</font></font></button>
+    </div>
+    <div style="margin-top: 30px;" class="mp-catalog-content__inner mp-catalog-item--redesign">
 
       
-      <div class="mp-catalog-item-wrap" *ngFor="let card of catalogService.catalog | slice:0:end; index as i">
+      <div class="mp-catalog-item-wrap" *ngFor="let card of catalogService.catalog | slice:start:end; index as i">
         <div class="mp-catalog-item js-catalog-item expanded" data-src="" data-id="" data-type="solution"
           data-name="" data-popup_form="solution-order-lightgallery-panel" data-popup_object_type_id=""
           data-popup_object_id="">
@@ -82,6 +144,7 @@
           <img
           class="card"
           [id]="i"
+          loading="lazy"
           (click)="popupService.openCard(card)"
           [attr.srcset]="catalogService.getCutSrcSet(card.id, card.format)"
           alt=""/>
@@ -125,13 +188,16 @@
       </div>
      
     </div>
+    <div class="center" style="margin: 10px 0" *ngIf="end !== 45">
+      <button (click)="BackNextButton(15)" [disabled]="clickBtn" class="cd-btn secondary load-more" id="get_more" style="display: inline-block; background-color: #e4ffe5;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Завантажити ще</font></font></button>
+    </div>
   </div>
-
-  <div class="mp-catalog__text-bot" [ngStyle]="{opacity: status ? '100' : '0'}">
-    <p class="mp-catalog__text-paragraph pictured">
-      <span class="mp-catalog__text-previewText">
-        Оренда готових сайтів для салонів краси – це швидкий і доступний спосіб створити професійний онлайн-образ для вашого бізнесу. Ви отримуєте сучасний дизайн, оптимізований під ваші потреби, без великих початкових витрат. Сайти вже налаштовані для залучення клієнтів через зручне онлайн-бронювання та SEO-оптимізацію. Це ідеальне рішення для тих, хто хоче зосередитися на розвитку бізнесу, а не на технічних деталях.
-      </span>
-    </p>
-  </div>
+  
+  
+<div class="mp-catalog__text-bot" style="margin: 40px 0px 20px; justify-items: center;" [ngStyle]="{opacity: status ? '100' : '0'}">
+  <p class="mp-catalog__text-paragraph pictured">
+  <span class="mp-catalog__text-previewText" style="font-size: 12px;">
+    Оренда готових сайтів для салонів краси – це швидкий і доступний спосіб створити професійний онлайн-образ для вашого бізнесу. Ви отримуєте сучасний дизайн, оптимізований під ваші потреби, без великих початкових витрат. Сайти вже налаштовані для залучення клієнтів через зручне онлайн-бронювання та SEO-оптимізацію. Це ідеальне рішення для тих, хто хоче зосередитися на розвитку бізнесу, а не на технічних деталях.
+  </span>
+</div>
 </div>

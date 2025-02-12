@@ -135,4 +135,23 @@ input:hover, input:focus, input:active {
     
 }
 
+.btnScroll {
+    width: 30px;
+    height: 30px;
+    background-color: #c58ccf;
+    color: white;
+    border-radius: 15px;
+    align-content: center;
+    text-align: center;
+    margin-bottom: 5px;
+    user-select: none
+}
 
+.scrollPopup {
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    display: grid;
+    cursor: pointer;
+    user-select: none
+}

@@ -61,10 +61,8 @@
   
   <div #scrollPopup class="mp-catalog-item-popup close" (click)="closePopup($event)">
     <img
-      [attr.srcset]="catalogService.getSrcSet(popupService.card.id, popupService.card.format, fullImgStatus)"
+      [attr.srcset]="catalogService.getSrcSet(popupService.card.id, popupService.card.format)"
       class="img-popup"
-      (click)="fullImgStatus = !fullImgStatus"
-      [ngClass]="{'bigImg': fullImgStatus}"
       (load)="status = true"
     >
   </div>

@@ -36,10 +36,13 @@
   }
 
 @media (max-width: 767px) {
-  .bigImg {
+ .img-popup {
+    margin-top: 60px!important;
     width: 120%!important;
+ }
+  /* .bigImg {
     margin-top: 0px!important;
-  }
+  } */
 }
 
 .id-site {
