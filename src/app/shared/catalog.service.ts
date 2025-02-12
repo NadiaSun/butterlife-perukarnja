@@ -19,24 +19,52 @@ export class CatalogService {
   
   }
 
-catalogBeautySalon: Card[] = [{id: "salon2", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon3", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon4", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon5", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon6", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon7", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon8", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon9", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon10", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon11", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon12", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon13", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon14", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon15", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon16", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon17", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-}, {id: "salon18", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.jpg', status: false
-},
+catalogBeautySalon: Card[] = [{id: "salon1", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon2", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon3", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon4", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon5", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon6", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon7", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon8", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon9", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon10", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon11", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon12", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon13", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon14", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon15", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon16", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon17", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon18", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon19", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon20", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon21", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon22", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon23", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon24", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon25", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon26", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon27", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon28", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon29", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon30", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon31", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon32", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon33", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon34", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon35", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon36", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon37", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon38", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon39", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon40", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon41", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon42", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon43", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon44", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}, {id: "salon45", name: 'Сайт салону краси', price: 700, promotionalPrice: 500, category: 'Салони краси', format: '.png', status: false
+}
 
 ]
 
